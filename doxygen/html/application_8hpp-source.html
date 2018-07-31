@@ -37,54 +37,58 @@
 <a name="l00024"></a>00024 
 <a name="l00032"></a>00032 <span class="comment">//#define USE_STL </span>
 <a name="l00033"></a>00033 
-<a name="l00035"></a>00035 <span class="keyword">extern</span> UART_HandleTypeDef <a class="code" href="application_8hpp.html#2cf715bef37f7e8ef385a30974a5f0d5" title="прототип глобальной струтуры USART1.">huart1</a>;
-<a name="l00044"></a><a class="code" href="class_command_parsing.html">00044</a> <span class="keyword">class </span><a class="code" href="class_command_parsing.html">CommandParsing</a> {
-<a name="l00045"></a>00045         
-<a name="l00046"></a>00046         
-<a name="l00047"></a>00047         <span class="keyword">public</span>:
-<a name="l00050"></a><a class="code" href="class_command_parsing.html#614d78523d2c549667f60ebbb7c8cf0a">00050</a>                 <span class="keyword">typedef</span> <span class="keyword">enum</span> {
-<a name="l00051"></a>00051                         CMD_NULL,
-<a name="l00052"></a>00052                         CMD_VOLTAGE,
-<a name="l00053"></a>00053                         CMD_LED_ON,
-<a name="l00054"></a>00054                         CMD_LED_OFF,
-<a name="l00055"></a>00055                         CMD_RATE
-<a name="l00056"></a>00056                 } <a class="code" href="class_command_parsing.html#614d78523d2c549667f60ebbb7c8cf0a">enCmd_t</a>;
-<a name="l00057"></a>00057                 
-<a name="l00061"></a><a class="code" href="class_command_parsing.html#4917d73a32e1c34993a701ada45cdeb1">00061</a>                 <a class="code" href="class_command_parsing.html#4917d73a32e1c34993a701ada45cdeb1">CommandParsing</a>(<span class="keywordtype">void</span>) 
-<a name="l00062"></a>00062                 {
-<a name="l00063"></a>00063                         command[<span class="stringliteral">"LED_ON"</span>]       =       CMD_LED_ON;
-<a name="l00064"></a>00064                         command[<span class="stringliteral">"LED_OFF"</span>]      =       CMD_LED_OFF;
-<a name="l00065"></a>00065                         command[<span class="stringliteral">"GET_ADC_AVG_VOLTAGE"</span>]  =       CMD_VOLTAGE;
-<a name="l00066"></a>00066                         command[<span class="stringliteral">"SET_ADC_SAMPLE_RATE"</span>]  =       CMD_RATE; 
-<a name="l00067"></a>00067                 }
-<a name="l00068"></a>00068                 
-<a name="l00074"></a><a class="code" href="class_command_parsing.html#2d2e902f2065cd35f683976575e8dddb">00074</a>                 <a class="code" href="class_command_parsing.html#614d78523d2c549667f60ebbb7c8cf0a">enCmd_t</a> <a class="code" href="class_command_parsing.html#2d2e902f2065cd35f683976575e8dddb">GetCommand</a>(std::string key) 
-<a name="l00075"></a>00075                 {
-<a name="l00076"></a>00076                         <span class="keywordflow">return</span> command[key];
-<a name="l00077"></a>00077                 }
-<a name="l00078"></a>00078                 
-<a name="l00079"></a>00079         <span class="keyword">private</span>:
-<a name="l00081"></a>00081                 std::map &lt;std::string , enCmd_t&gt; command;
-<a name="l00082"></a>00082                 
-<a name="l00083"></a>00083 };
-<a name="l00084"></a>00084 
-<a name="l00093"></a><a class="code" href="application_8hpp.html#5f6746b4a57d682f518623bbc7982363">00093</a> <a class="code" href="class_command_parsing.html#614d78523d2c549667f60ebbb7c8cf0a">CommandParsing::enCmd_t</a> <a class="code" href="application_8hpp.html#5f6746b4a57d682f518623bbc7982363">GetCommand</a>(<span class="keywordtype">char</span>* rx_message)
-<a name="l00094"></a>00094 {
-<a name="l00095"></a>00095         <span class="keywordflow">if</span>              (strcmp(rx_message,<span class="stringliteral">"LED_ON"</span>)    == 0)   <span class="keywordflow">return</span> CommandParsing::CMD_LED_ON;
-<a name="l00096"></a>00096         
-<a name="l00097"></a>00097         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(rx_message,<span class="stringliteral">"LED_OFF"</span>)   == 0)   <span class="keywordflow">return</span> CommandParsing::CMD_LED_OFF;
-<a name="l00098"></a>00098         
-<a name="l00099"></a>00099         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(rx_message,<span class="stringliteral">"GET_ADC_AVG_VOLTAGE"</span>) == 0) <span class="keywordflow">return</span>  CommandParsing::CMD_VOLTAGE;
-<a name="l00100"></a>00100         
-<a name="l00101"></a>00101         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp(rx_message,<span class="stringliteral">"SET_ADC_SAMPLE_RATE"</span>,18) == 0)     <span class="keywordflow">return</span>  CommandParsing::CMD_RATE;
+<a name="l00035"></a><a class="code" href="application_8hpp.html#4ddea5668a6504891995f3942304edb6">00035</a> <span class="preprocessor">#define RX_SIMB_QUEUE_SZ 64</span>
+<a name="l00036"></a>00036 <span class="preprocessor"></span>
+<a name="l00038"></a><a class="code" href="application_8hpp.html#b9bf261db09b7ffe0b27172004f8bb42">00038</a> <span class="preprocessor">#define RX_MESSAGE_QUEUE_SZ 8</span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span>
+<a name="l00041"></a>00041 <span class="keyword">extern</span> UART_HandleTypeDef <a class="code" href="application_8hpp.html#2cf715bef37f7e8ef385a30974a5f0d5" title="прототип глобальной струтуры USART1.">huart1</a>;
+<a name="l00050"></a><a class="code" href="class_command_parsing.html">00050</a> <span class="keyword">class </span><a class="code" href="class_command_parsing.html">CommandParsing</a> {
+<a name="l00051"></a>00051         
+<a name="l00052"></a>00052         
+<a name="l00053"></a>00053         <span class="keyword">public</span>:
+<a name="l00056"></a><a class="code" href="class_command_parsing.html#614d78523d2c549667f60ebbb7c8cf0a">00056</a>                 <span class="keyword">typedef</span> <span class="keyword">enum</span> {
+<a name="l00057"></a>00057                         CMD_NULL,
+<a name="l00058"></a>00058                         CMD_VOLTAGE,
+<a name="l00059"></a>00059                         CMD_LED_ON,
+<a name="l00060"></a>00060                         CMD_LED_OFF,
+<a name="l00061"></a>00061                         CMD_RATE
+<a name="l00062"></a>00062                 } <a class="code" href="class_command_parsing.html#614d78523d2c549667f60ebbb7c8cf0a">enCmd_t</a>;
+<a name="l00063"></a>00063                 
+<a name="l00067"></a><a class="code" href="class_command_parsing.html#4917d73a32e1c34993a701ada45cdeb1">00067</a>                 <a class="code" href="class_command_parsing.html#4917d73a32e1c34993a701ada45cdeb1">CommandParsing</a>(<span class="keywordtype">void</span>) 
+<a name="l00068"></a>00068                 {
+<a name="l00069"></a>00069                         command[<span class="stringliteral">"LED_ON"</span>]       =       CMD_LED_ON;
+<a name="l00070"></a>00070                         command[<span class="stringliteral">"LED_OFF"</span>]      =       CMD_LED_OFF;
+<a name="l00071"></a>00071                         command[<span class="stringliteral">"GET_ADC_AVG_VOLTAGE"</span>]  =       CMD_VOLTAGE;
+<a name="l00072"></a>00072                         command[<span class="stringliteral">"SET_ADC_SAMPLE_RATE"</span>]  =       CMD_RATE; 
+<a name="l00073"></a>00073                 }
+<a name="l00074"></a>00074                 
+<a name="l00080"></a><a class="code" href="class_command_parsing.html#2d2e902f2065cd35f683976575e8dddb">00080</a>                 <a class="code" href="class_command_parsing.html#614d78523d2c549667f60ebbb7c8cf0a">enCmd_t</a> <a class="code" href="class_command_parsing.html#2d2e902f2065cd35f683976575e8dddb">GetCommand</a>(std::string key) 
+<a name="l00081"></a>00081                 {
+<a name="l00082"></a>00082                         <span class="keywordflow">return</span> command[key];
+<a name="l00083"></a>00083                 }
+<a name="l00084"></a>00084                 
+<a name="l00085"></a>00085         <span class="keyword">private</span>:
+<a name="l00087"></a>00087                 std::map &lt;std::string , enCmd_t&gt; command;
+<a name="l00088"></a>00088                 
+<a name="l00089"></a>00089 };
+<a name="l00090"></a>00090 
+<a name="l00099"></a><a class="code" href="application_8hpp.html#5f6746b4a57d682f518623bbc7982363">00099</a> <a class="code" href="class_command_parsing.html#614d78523d2c549667f60ebbb7c8cf0a">CommandParsing::enCmd_t</a> <a class="code" href="application_8hpp.html#5f6746b4a57d682f518623bbc7982363">GetCommand</a>(<span class="keywordtype">char</span>* rx_message)
+<a name="l00100"></a>00100 {
+<a name="l00101"></a>00101         <span class="keywordflow">if</span>              (strcmp(rx_message,<span class="stringliteral">"LED_ON"</span>)    == 0)   <span class="keywordflow">return</span> CommandParsing::CMD_LED_ON;
 <a name="l00102"></a>00102         
-<a name="l00103"></a>00103         <span class="keywordflow">return</span> CommandParsing::CMD_NULL;        
-<a name="l00104"></a>00104 }
-<a name="l00105"></a>00105 
-<a name="l00106"></a>00106 <span class="preprocessor">#endif // __PROCESS_HPP_</span>
-<a name="l00107"></a>00107 <span class="preprocessor"></span>
+<a name="l00103"></a>00103         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(rx_message,<span class="stringliteral">"LED_OFF"</span>)   == 0)   <span class="keywordflow">return</span> CommandParsing::CMD_LED_OFF;
+<a name="l00104"></a>00104         
+<a name="l00105"></a>00105         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(rx_message,<span class="stringliteral">"GET_ADC_AVG_VOLTAGE"</span>) == 0) <span class="keywordflow">return</span>  CommandParsing::CMD_VOLTAGE;
+<a name="l00106"></a>00106         
+<a name="l00107"></a>00107         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strncmp(rx_message,<span class="stringliteral">"SET_ADC_SAMPLE_RATE"</span>,18) == 0)     <span class="keywordflow">return</span>  CommandParsing::CMD_RATE;
+<a name="l00108"></a>00108         
+<a name="l00109"></a>00109         <span class="keywordflow">return</span> CommandParsing::CMD_NULL;        
+<a name="l00110"></a>00110 }
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112 <span class="preprocessor">#endif // __PROCESS_HPP_</span>
+<a name="l00113"></a>00113 <span class="preprocessor"></span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Документация по test_prog. Последние изменения: Mon Jul 30 23:19:59 2018. Создано системой&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Документация по test_prog. Последние изменения: Tue Jul 31 11:26:06 2018. Создано системой&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

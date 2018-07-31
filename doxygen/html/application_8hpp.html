@@ -39,19 +39,46 @@
 <tr><td colspan="2"><br><h2>Классы</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_parsing.html">CommandParsing</a></td></tr>
 
+<tr><td colspan="2"><br><h2>Макросы</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8hpp.html#4ddea5668a6504891995f3942304edb6">RX_SIMB_QUEUE_SZ</a>&nbsp;&nbsp;&nbsp;64</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">длина буфера принимаемых символов.  <a href="#4ddea5668a6504891995f3942304edb6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="b9bf261db09b7ffe0b27172004f8bb42"></a><!-- doxytag: member="application.hpp::RX_MESSAGE_QUEUE_SZ" ref="b9bf261db09b7ffe0b27172004f8bb42" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8hpp.html#b9bf261db09b7ffe0b27172004f8bb42">RX_MESSAGE_QUEUE_SZ</a>&nbsp;&nbsp;&nbsp;8</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">длина очереди сообщений. <br></td></tr>
 <tr><td colspan="2"><br><h2>Функции</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_command_parsing.html#614d78523d2c549667f60ebbb7c8cf0a">CommandParsing::enCmd_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8hpp.html#5f6746b4a57d682f518623bbc7982363">GetCommand</a> (char *rx_message)</td></tr>
 
 <tr><td colspan="2"><br><h2>Переменные</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">UART_HandleTypeDef&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8hpp.html#2cf715bef37f7e8ef385a30974a5f0d5">huart1</a></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="2cf715bef37f7e8ef385a30974a5f0d5"></a><!-- doxytag: member="application.hpp::huart1" ref="2cf715bef37f7e8ef385a30974a5f0d5" args="" -->
+UART_HandleTypeDef&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8hpp.html#2cf715bef37f7e8ef385a30974a5f0d5">huart1</a></td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">прототип глобальной струтуры USART1.  <a href="#2cf715bef37f7e8ef385a30974a5f0d5"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">прототип глобальной струтуры USART1. <br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Подробное описание</h2>
 : содержит класс, использующий STL, и функцию для распознования команды в строке 
 <p>
 <dl class="author" compact><dt><b>Автор:</b></dt><dd>: rual </dd></dl>
 <dl class="date" compact><dt><b>Дата:</b></dt><dd>: 18.07.2018 </dd></dl>
+<hr><h2>Макросы</h2>
+<a class="anchor" name="4ddea5668a6504891995f3942304edb6"></a><!-- doxytag: member="application.hpp::RX_SIMB_QUEUE_SZ" ref="4ddea5668a6504891995f3942304edb6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RX_SIMB_QUEUE_SZ&nbsp;&nbsp;&nbsp;64          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+длина буфера принимаемых символов. 
+<p>
+для использоваания класса map библиотеки STL для дешифровки команды * раскоментируйте define USE_STL, код рабочий и компилируется корректно, * но на платформе STM32F3Discovery не запускается из-за недостатка RAM * В рабочей версии программы применена стандартная библиотека string.h * и более легкая функция strcmp() 
+</div>
+</div><p>
 <hr><h2>Функции</h2>
 <a class="anchor" name="5f6746b4a57d682f518623bbc7982363"></a><!-- doxytag: member="application.hpp::GetCommand" ref="5f6746b4a57d682f518623bbc7982363" args="(char *rx_message)" -->
 <div class="memitem">
@@ -79,26 +106,8 @@ GetCommand выполняет распознавание команды <dl comp
 
 </div>
 </div><p>
-<hr><h2>Переменные</h2>
-<a class="anchor" name="2cf715bef37f7e8ef385a30974a5f0d5"></a><!-- doxytag: member="application.hpp::huart1" ref="2cf715bef37f7e8ef385a30974a5f0d5" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">UART_HandleTypeDef <a class="el" href="stm32f3xx__it_8c.html#2cf715bef37f7e8ef385a30974a5f0d5">huart1</a>          </td>
-        </tr>
-      </table>
 </div>
-<div class="memdoc">
-
-<p>
-прототип глобальной струтуры USART1. 
-<p>
-для использоваания класса map библиотеки STL для дешифровки команды * раскоментируйте define USE_STL, код рабочий и компилируется корректно, * но на платформе STM32F3Discovery не запускается из-за недостатка RAM * В рабочей версии программы применена стандартная библиотека string.h * и более легкая функция strcmp() 
-</div>
-</div><p>
-</div>
-<hr size="1"><address style="text-align: right;"><small>Документация по test_prog. Последние изменения: Mon Jul 30 23:19:59 2018. Создано системой&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Документация по test_prog. Последние изменения: Tue Jul 31 11:26:06 2018. Создано системой&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

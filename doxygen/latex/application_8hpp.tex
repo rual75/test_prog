@@ -17,6 +17,16 @@
 \item 
 class \hyperlink{class_command_parsing}{CommandParsing}
 \end{CompactItemize}
+\subsection*{Макросы}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{application_8hpp_4ddea5668a6504891995f3942304edb6}{RX\_\-SIMB\_\-QUEUE\_\-SZ}~64
+\begin{CompactList}\small\item\em длина буфера принимаемых символов. \item\end{CompactList}\item 
+\hypertarget{application_8hpp_b9bf261db09b7ffe0b27172004f8bb42}{
+\#define \hyperlink{application_8hpp_b9bf261db09b7ffe0b27172004f8bb42}{RX\_\-MESSAGE\_\-QUEUE\_\-SZ}~8}
+\label{application_8hpp_b9bf261db09b7ffe0b27172004f8bb42}
+
+\begin{CompactList}\small\item\em длина очереди сообщений. \item\end{CompactList}\end{CompactItemize}
 \subsection*{Функции}
 \begin{CompactItemize}
 \item 
@@ -25,7 +35,10 @@ class \hyperlink{class_command_parsing}{CommandParsing}
 \subsection*{Переменные}
 \begin{CompactItemize}
 \item 
-UART\_\-HandleTypeDef \hyperlink{application_8hpp_2cf715bef37f7e8ef385a30974a5f0d5}{huart1}
+\hypertarget{application_8hpp_2cf715bef37f7e8ef385a30974a5f0d5}{
+UART\_\-HandleTypeDef \hyperlink{application_8hpp_2cf715bef37f7e8ef385a30974a5f0d5}{huart1}}
+\label{application_8hpp_2cf715bef37f7e8ef385a30974a5f0d5}
+
 \begin{CompactList}\small\item\em прототип глобальной струтуры USART1. \item\end{CompactList}\end{CompactItemize}
 
 
@@ -37,6 +50,18 @@ UART\_\-HandleTypeDef \hyperlink{application_8hpp_2cf715bef37f7e8ef385a30974a5f0
 \begin{Desc}
 \item[Дата:]: 18.07.2018 \end{Desc}
 
+
+\subsection{Макросы}
+\hypertarget{application_8hpp_4ddea5668a6504891995f3942304edb6}{
+\index{application.hpp@{application.hpp}!RX\_\-SIMB\_\-QUEUE\_\-SZ@{RX\_\-SIMB\_\-QUEUE\_\-SZ}}
+\index{RX\_\-SIMB\_\-QUEUE\_\-SZ@{RX\_\-SIMB\_\-QUEUE\_\-SZ}!application.hpp@{application.hpp}}
+\subsubsection[{RX\_\-SIMB\_\-QUEUE\_\-SZ}]{\setlength{\rightskip}{0pt plus 5cm}\#define RX\_\-SIMB\_\-QUEUE\_\-SZ~64}}
+\label{application_8hpp_4ddea5668a6504891995f3942304edb6}
+
+
+длина буфера принимаемых символов. 
+
+для использоваания класса map библиотеки STL для дешифровки команды $\ast$ раскоментируйте define USE\_\-STL, код рабочий и компилируется корректно, $\ast$ но на платформе STM32F3Discovery не запускается из-за недостатка RAM $\ast$ В рабочей версии программы применена стандартная библиотека string.h $\ast$ и более легкая функция strcmp() 
 
 \subsection{Функции}
 \hypertarget{application_8hpp_5f6746b4a57d682f518623bbc7982363}{
@@ -53,16 +78,3 @@ GetCommand выполняет распознавание команды \begin{D
 \end{Desc}
 \begin{Desc}
 \item[Возвращает:]одно из значений enCmd\_\-t, соответсвующая команде, либо, если команда не распознана - CMD\_\-NULL \end{Desc}
-
-
-\subsection{Переменные}
-\hypertarget{application_8hpp_2cf715bef37f7e8ef385a30974a5f0d5}{
-\index{application.hpp@{application.hpp}!huart1@{huart1}}
-\index{huart1@{huart1}!application.hpp@{application.hpp}}
-\subsubsection[{huart1}]{\setlength{\rightskip}{0pt plus 5cm}UART\_\-HandleTypeDef {\bf huart1}}}
-\label{application_8hpp_2cf715bef37f7e8ef385a30974a5f0d5}
-
-
-прототип глобальной струтуры USART1. 
-
-для использоваания класса map библиотеки STL для дешифровки команды $\ast$ раскоментируйте define USE\_\-STL, код рабочий и компилируется корректно, $\ast$ но на платформе STM32F3Discovery не запускается из-за недостатка RAM $\ast$ В рабочей версии программы применена стандартная библиотека string.h $\ast$ и более легкая функция strcmp() 
