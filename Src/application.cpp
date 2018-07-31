@@ -9,7 +9,7 @@
 #include "application.hpp"
 
 /// последний символ сообщения
-#define SEPARATOR 13
+#define SEPARATOR 0x00
 
 /**
 @brief идентификаторы ответов 
@@ -62,9 +62,9 @@ void init_application(void)
 	
 	
 	/// Queue create
-	RxQueue = xQueueCreate(256,1); 
+	RxQueue = xQueueCreate(RX_SIMB_QUEUE_SZ,1); 
 	
-	RxMessageQueue = xQueueCreate(4,32); 
+	RxMessageQueue = xQueueCreate(RX_MESSAGE_QUEUE_SZ,32); 
 	
 	TxQueue = xQueueCreate(16,sizeof (enTx_t)); 
 	
