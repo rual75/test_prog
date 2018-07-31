@@ -31,6 +31,12 @@ using namespace std;
 */
 //#define USE_STL 
 
+/// длина буфера принимаемых символов
+#define RX_SIMB_QUEUE_SZ 64
+
+/// длина очереди сообщений
+#define RX_MESSAGE_QUEUE_SZ 8
+
 /// прототип глобальной струтуры USART1
 extern UART_HandleTypeDef huart1;
 /**
