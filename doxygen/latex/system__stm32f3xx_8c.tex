@@ -1,0 +1,70 @@
+\hypertarget{system__stm32f3xx_8c}{
+\section{Файл D:/Project/Cortex/test\_\-prog/Src/system\_\-stm32f3xx.c}
+\label{system__stm32f3xx_8c}\index{D:/Project/Cortex/test\_\-prog/Src/system\_\-stm32f3xx.c@{D:/Project/Cortex/test\_\-prog/Src/system\_\-stm32f3xx.c}}
+}
+CMSIS Cortex-M4 Device Peripheral Access Layer System Source File.  
+
+
+{\tt \#include \char`\"{}stm32f3xx.h\char`\"{}}\par
+\subsection*{Макросы}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{group___s_t_m32_f3xx___system___private___defines_geafcff4f57440c60e64812dddd13e7cb}{HSE\_\-VALUE}~((uint32\_\-t)8000000)
+\item 
+\#define \hyperlink{group___s_t_m32_f3xx___system___private___defines_gaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\_\-VALUE}~((uint32\_\-t)8000000)
+\item 
+\#define \hyperlink{group___s_t_m32_f3xx___system___private___defines_g40e1495541cbb4acbe3f1819bd87a9fe}{VECT\_\-TAB\_\-OFFSET}~0x0
+\end{CompactItemize}
+\subsection*{Функции}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group___s_t_m32_f3xx___system___private___functions_g93f514700ccf00d08dbdcff7f1224eb2}{SystemInit} (void)
+\begin{CompactList}\small\item\em Setup the microcontroller system Initialize the FPU setting, vector table location and the PLL configuration is reset. \item\end{CompactList}\item 
+void \hyperlink{group___s_t_m32_f3xx___system___private___functions_ge0c36a9591fe6e9c45ecb21a794f0f0f}{SystemCoreClockUpdate} (void)
+\begin{CompactList}\small\item\em Update SystemCoreClock variable according to Clock Register Values. The SystemCoreClock variable contains the core clock (HCLK), it can be used by the user application to setup the SysTick timer or configure other parameters. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Переменные}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___s_t_m32_f3xx___system___private___variables_ga3cd3e43291e81e795d642b79b6088e6}{
+uint32\_\-t \textbf{SystemCoreClock} = 8000000}
+\label{group___s_t_m32_f3xx___system___private___variables_ga3cd3e43291e81e795d642b79b6088e6}
+
+\item 
+\hypertarget{group___s_t_m32_f3xx___system___private___variables_g6e1d9cd666f0eacbfde31e9932a93466}{
+const uint8\_\-t \textbf{AHBPrescTable} \mbox{[}16\mbox{]} = \{0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9\}}
+\label{group___s_t_m32_f3xx___system___private___variables_g6e1d9cd666f0eacbfde31e9932a93466}
+
+\item 
+\hypertarget{group___s_t_m32_f3xx___system___private___variables_g5b4f8b768465842cf854a8f993b375e9}{
+const uint8\_\-t \textbf{APBPrescTable} \mbox{[}8\mbox{]} = \{0, 0, 0, 0, 1, 2, 3, 4\}}
+\label{group___s_t_m32_f3xx___system___private___variables_g5b4f8b768465842cf854a8f993b375e9}
+
+\end{CompactItemize}
+
+
+\subsection{Подробное описание}
+CMSIS Cortex-M4 Device Peripheral Access Layer System Source File. 
+
+\begin{Desc}
+\item[Автор:]MCD Application Team 1. This file provides two functions and one global variable to be called from user application:\begin{itemize}
+\item \hyperlink{group___s_t_m32_f3xx___system___private___functions_g93f514700ccf00d08dbdcff7f1224eb2}{SystemInit()}: This function is called at startup just after reset and before branch to main program. This call is made inside the \char`\"{}startup\_\-stm32f3xx.s\char`\"{} file.\end{itemize}
+\end{Desc}
+\begin{itemize}
+\item SystemCoreClock variable: Contains the core clock (HCLK), it can be used by the user application to setup the SysTick timer or configure other parameters.\end{itemize}
+
+
+\begin{itemize}
+\item \hyperlink{group___s_t_m32_f3xx___system___private___functions_ge0c36a9591fe6e9c45ecb21a794f0f0f}{SystemCoreClockUpdate()}: Updates the variable SystemCoreClock and must be called whenever the core clock is changed during program execution.\end{itemize}
+
+
+2. After each device reset the HSI (8 MHz) is used as system clock source. Then \hyperlink{group___s_t_m32_f3xx___system___private___functions_g93f514700ccf00d08dbdcff7f1224eb2}{SystemInit()} function is called, in \char`\"{}startup\_\-stm32f3xx.s\char`\"{} file, to configure the system clock before to branch to main program.
+
+3. This file configures the system clock as follows: ============================================================================= Supported STM32F3xx device ----------------------------------------------------------------------------- System Clock source $|$ HSI ----------------------------------------------------------------------------- SYSCLK(Hz) $|$ 8000000 ----------------------------------------------------------------------------- HCLK(Hz) $|$ 8000000 ----------------------------------------------------------------------------- AHB Prescaler $|$ 1 ----------------------------------------------------------------------------- APB2 Prescaler $|$ 1 ----------------------------------------------------------------------------- APB1 Prescaler $|$ 1 ----------------------------------------------------------------------------- USB Clock $|$ DISABLE ----------------------------------------------------------------------------- =============================================================================
+
+\begin{Desc}
+\item[Внимание:]\end{Desc}
+\subsubsection*{\begin{center}\copyright COPYRIGHT(c) 2016 STMicroelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. 3. Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \char`\"{}AS IS\char`\"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

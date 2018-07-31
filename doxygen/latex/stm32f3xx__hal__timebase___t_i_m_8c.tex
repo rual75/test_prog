@@ -1,0 +1,45 @@
+\hypertarget{stm32f3xx__hal__timebase___t_i_m_8c}{
+\section{Файл D:/Project/Cortex/test\_\-prog/Src/stm32f3xx\_\-hal\_\-timebase\_\-TIM.c}
+\label{stm32f3xx__hal__timebase___t_i_m_8c}\index{D:/Project/Cortex/test\_\-prog/Src/stm32f3xx\_\-hal\_\-timebase\_\-TIM.c@{D:/Project/Cortex/test\_\-prog/Src/stm32f3xx\_\-hal\_\-timebase\_\-TIM.c}}
+}
+HAL time base based on the hardware TIM.  
+
+
+{\tt \#include \char`\"{}stm32f3xx\_\-hal.h\char`\"{}}\par
+{\tt \#include \char`\"{}stm32f3xx\_\-hal\_\-tim.h\char`\"{}}\par
+\subsection*{Функции}
+\begin{CompactItemize}
+\item 
+HAL\_\-StatusTypeDef \hyperlink{group___h_a_l___time_base_g879cdb21ef051eb81ec51c18147397d5}{HAL\_\-InitTick} (uint32\_\-t TickPriority)
+\begin{CompactList}\small\item\em This function configures the TIM8 as a time base source. The time source is configured to have 1ms time base with a dedicated Tick interrupt priority. \item\end{CompactList}\item 
+void \hyperlink{group___h_a_l___time_base_gaf651af2afe688a991c657f64f8fa5f9}{HAL\_\-SuspendTick} (void)
+\begin{CompactList}\small\item\em Suspend Tick increment. \item\end{CompactList}\item 
+void \hyperlink{group___h_a_l___time_base_g24e0ee9dae1ec0f9d19200f5575ff790}{HAL\_\-ResumeTick} (void)
+\begin{CompactList}\small\item\em Resume Tick increment. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Переменные}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___h_a_l___time_base_g5faa27108379f799afb6984010bf0384}{
+TIM\_\-HandleTypeDef \textbf{htim8}}
+\label{group___h_a_l___time_base_g5faa27108379f799afb6984010bf0384}
+
+\item 
+\hypertarget{group___h_a_l___time_base_gd252e5fa14fe03797c816cfb14962693}{
+uint32\_\-t \textbf{uwIncrementState} = 0}
+\label{group___h_a_l___time_base_gd252e5fa14fe03797c816cfb14962693}
+
+\end{CompactItemize}
+
+
+\subsection{Подробное описание}
+HAL time base based on the hardware TIM. 
+
+This notice applies to any and all portions of this file that are not between comment pairs USER CODE BEGIN and USER CODE END. Other portions of this file, whether inserted by the user or by software development tools are owned by their respective copyright owners.
+
+Copyright (c) 2018 STMicroelectronics International N.V. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted, provided that the following conditions are met:
+
+1. Redistribution of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. 3. Neither the name of STMicroelectronics nor the names of other contributors to this software may be used to endorse or promote products derived from this software without specific written permission. 4. This software, including modifications and/or derivative works of this software, must execute solely and exclusively on microcontroller or microprocessor devices manufactured by or for STMicroelectronics. 5. Redistribution and use of this software other than as permitted under this license is void and will automatically terminate your rights under this license.
+
+THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS \char`\"{}AS IS\char`\"{} AND ANY EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY RIGHTS ARE DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. IN NO EVENT SHALL STMICROELECTRONICS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

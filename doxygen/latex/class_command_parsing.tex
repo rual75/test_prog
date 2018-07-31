@@ -1,0 +1,74 @@
+\hypertarget{class_command_parsing}{
+\section{Класс CommandParsing}
+\label{class_command_parsing}\index{CommandParsing@{CommandParsing}}
+}
+\subsection*{Открытые типы}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{class_command_parsing_614d78523d2c549667f60ebbb7c8cf0a}{enCmd\_\-t} \{ \par
+\textbf{CMD\_\-NULL}, 
+\textbf{CMD\_\-VOLTAGE}, 
+\textbf{CMD\_\-LED\_\-ON}, 
+\textbf{CMD\_\-LED\_\-OFF}, 
+\par
+\textbf{CMD\_\-RATE}
+ \}
+\subsection*{Открытые члены}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_command_parsing_4917d73a32e1c34993a701ada45cdeb1}{CommandParsing} (void)
+\item 
+\hyperlink{class_command_parsing_614d78523d2c549667f60ebbb7c8cf0a}{enCmd\_\-t} \hyperlink{class_command_parsing_2d2e902f2065cd35f683976575e8dddb}{GetCommand} (std::string key)
+\end{CompactItemize}
+
+
+\subsection{Подробное описание}
+команды \begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em char$\ast$}]rx\_\-message стандартная строка, содержащая команду \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращает:]одно из значений enCmd\_\-t, соответсвующая команде, либо, если команда не распознана - CMD\_\-NULL \end{Desc}
+
+
+\subsection{Перечисления}
+\hypertarget{class_command_parsing_614d78523d2c549667f60ebbb7c8cf0a}{
+\index{CommandParsing@{CommandParsing}!enCmd\_\-t@{enCmd\_\-t}}
+\index{enCmd\_\-t@{enCmd\_\-t}!CommandParsing@{CommandParsing}}
+\subsubsection[{enCmd\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf CommandParsing::enCmd\_\-t}}}
+\label{class_command_parsing_614d78523d2c549667f60ebbb7c8cf0a}
+
+
+значение команды 
+
+\subsection{Конструктор(ы)}
+\hypertarget{class_command_parsing_4917d73a32e1c34993a701ada45cdeb1}{
+\index{CommandParsing@{CommandParsing}!CommandParsing@{CommandParsing}}
+\index{CommandParsing@{CommandParsing}!CommandParsing@{CommandParsing}}
+\subsubsection[{CommandParsing}]{\setlength{\rightskip}{0pt plus 5cm}CommandParsing::CommandParsing (void)\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_command_parsing_4917d73a32e1c34993a701ada45cdeb1}
+
+
+конструктор - заполняет ключи и значения команд 
+
+\subsection{Методы}
+\hypertarget{class_command_parsing_2d2e902f2065cd35f683976575e8dddb}{
+\index{CommandParsing@{CommandParsing}!GetCommand@{GetCommand}}
+\index{GetCommand@{GetCommand}!CommandParsing@{CommandParsing}}
+\subsubsection[{GetCommand}]{\setlength{\rightskip}{0pt plus 5cm}{\bf enCmd\_\-t} CommandParsing::GetCommand (std::string {\em key})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{class_command_parsing_2d2e902f2065cd35f683976575e8dddb}
+
+
+метод выполняющий распознование команды в строке \begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em string}]key - строка с ключом-строкой \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращает:]возращает значение команды, если распознана, CMD\_\-NULL - если нет. \end{Desc}
+
+
+Объявления и описания членов класса находятся в файле:\begin{CompactItemize}
+\item 
+D:/Project/Cortex/test\_\-prog/Src/\hyperlink{application_8hpp}{application.hpp}\end{CompactItemize}

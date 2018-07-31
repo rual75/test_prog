@@ -1,0 +1,76 @@
+\hypertarget{group___s_t_m32_f3xx___system___private___functions}{
+\section{STM32F3xx\_\-System\_\-Private\_\-Functions}
+\label{group___s_t_m32_f3xx___system___private___functions}\index{STM32F3xx\_\-System\_\-Private\_\-Functions@{STM32F3xx\_\-System\_\-Private\_\-Functions}}
+}
+\subsection*{Функции}
+\begin{CompactItemize}
+\item 
+void \hyperlink{group___s_t_m32_f3xx___system___private___functions_g93f514700ccf00d08dbdcff7f1224eb2}{SystemInit} (void)
+\begin{CompactList}\small\item\em Setup the microcontroller system Initialize the FPU setting, vector table location and the PLL configuration is reset. \item\end{CompactList}\item 
+void \hyperlink{group___s_t_m32_f3xx___system___private___functions_ge0c36a9591fe6e9c45ecb21a794f0f0f}{SystemCoreClockUpdate} (void)
+\begin{CompactList}\small\item\em Update SystemCoreClock variable according to Clock Register Values. The SystemCoreClock variable contains the core clock (HCLK), it can be used by the user application to setup the SysTick timer or configure other parameters. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Функции}
+\hypertarget{group___s_t_m32_f3xx___system___private___functions_ge0c36a9591fe6e9c45ecb21a794f0f0f}{
+\index{STM32F3xx\_\-System\_\-Private\_\-Functions@{STM32F3xx\_\-System\_\-Private\_\-Functions}!SystemCoreClockUpdate@{SystemCoreClockUpdate}}
+\index{SystemCoreClockUpdate@{SystemCoreClockUpdate}!STM32F3xx_System_Private_Functions@{STM32F3xx\_\-System\_\-Private\_\-Functions}}
+\subsubsection[{SystemCoreClockUpdate}]{\setlength{\rightskip}{0pt plus 5cm}void SystemCoreClockUpdate (void)}}
+\label{group___s_t_m32_f3xx___system___private___functions_ge0c36a9591fe6e9c45ecb21a794f0f0f}
+
+
+Update SystemCoreClock variable according to Clock Register Values. The SystemCoreClock variable contains the core clock (HCLK), it can be used by the user application to setup the SysTick timer or configure other parameters. 
+
+\begin{Desc}
+\item[Заметки:]Each time the core clock (HCLK) changes, this function must be called to update SystemCoreClock variable value. Otherwise, any configuration based on this variable will be incorrect.
+
+- The system frequency computed by this function is not the real frequency in the chip. It is calculated based on the predefined constant and the selected clock source:\end{Desc}
+\begin{itemize}
+\item If SYSCLK source is HSI, SystemCoreClock will contain the \hyperlink{group___s_t_m32_f3xx___system___private___defines_gaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\_\-VALUE($\ast$)}\end{itemize}
+
+
+\begin{itemize}
+\item If SYSCLK source is HSE, SystemCoreClock will contain the \hyperlink{group___s_t_m32_f3xx___system___private___defines_geafcff4f57440c60e64812dddd13e7cb}{HSE\_\-VALUE($\ast$$\ast$)}\end{itemize}
+
+
+\begin{itemize}
+\item If SYSCLK source is PLL, SystemCoreClock will contain the \hyperlink{group___s_t_m32_f3xx___system___private___defines_geafcff4f57440c60e64812dddd13e7cb}{HSE\_\-VALUE($\ast$$\ast$)} or \hyperlink{group___s_t_m32_f3xx___system___private___defines_gaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\_\-VALUE($\ast$)} multiplied/divided by the PLL factors.\end{itemize}
+
+
+($\ast$) HSI\_\-VALUE is a constant defined in stm32f3xx\_\-hal.h file (default value 8 MHz) but the real value may vary depending on the variations in voltage and temperature.
+
+($\ast$$\ast$) HSE\_\-VALUE is a constant defined in stm32f3xx\_\-hal.h file (default value 8 MHz), user has to ensure that HSE\_\-VALUE is same as the real frequency of the crystal used. Otherwise, this function may have wrong result.
+
+\begin{itemize}
+\item The result of this function could be not correct when using fractional value for HSE crystal.\end{itemize}
+
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{group___s_t_m32_f3xx___system___private___functions_g93f514700ccf00d08dbdcff7f1224eb2}{
+\index{STM32F3xx\_\-System\_\-Private\_\-Functions@{STM32F3xx\_\-System\_\-Private\_\-Functions}!SystemInit@{SystemInit}}
+\index{SystemInit@{SystemInit}!STM32F3xx_System_Private_Functions@{STM32F3xx\_\-System\_\-Private\_\-Functions}}
+\subsubsection[{SystemInit}]{\setlength{\rightskip}{0pt plus 5cm}void SystemInit (void)}}
+\label{group___s_t_m32_f3xx___system___private___functions_g93f514700ccf00d08dbdcff7f1224eb2}
+
+
+Setup the microcontroller system Initialize the FPU setting, vector table location and the PLL configuration is reset. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}

@@ -1,0 +1,164 @@
+\hypertarget{application_8cpp}{
+\section{Файл D:/Project/Cortex/test\_\-prog/Src/application.cpp}
+\label{application_8cpp}\index{D:/Project/Cortex/test\_\-prog/Src/application.cpp@{D:/Project/Cortex/test\_\-prog/Src/application.cpp}}
+}
+: содержит код задач RTOS  
+
+
+{\tt \#include \char`\"{}application.hpp\char`\"{}}\par
+\subsection*{Макросы}
+\begin{CompactItemize}
+\item 
+\hypertarget{application_8cpp_f68c3a5ad6ffce6c97fff154856a823d}{
+\#define \hyperlink{application_8cpp_f68c3a5ad6ffce6c97fff154856a823d}{SEPARATOR}~13}
+\label{application_8cpp_f68c3a5ad6ffce6c97fff154856a823d}
+
+\begin{CompactList}\small\item\em последний символ сообщения. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Перечисления}
+\begin{CompactItemize}
+\item 
+enum \hyperlink{application_8cpp_a5664f5f83a4947029ebff8be4511941}{enTx\_\-t} \{ \par
+\textbf{TX\_\-NULL}, 
+\textbf{TX\_\-ERROR}, 
+\textbf{TX\_\-BUSY}, 
+\textbf{TX\_\-OK}, 
+\par
+\textbf{TX\_\-ADC}
+ \}
+\begin{CompactList}\small\item\em идентификаторы ответов. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Функции}
+\begin{CompactItemize}
+\item 
+void \hyperlink{application_8cpp_798d1866c1e486b1f7dabe93ab9ffa92}{USARTRXTask} (void $\ast$argument)
+\begin{CompactList}\small\item\em RX blinck semaphore. \item\end{CompactList}\item 
+void \hyperlink{application_8cpp_712ca584b4c312df33995aa10720bcf7}{RxParseTask} (void $\ast$argument)
+\item 
+\hypertarget{application_8cpp_b4e3c7bbbd4c2813a6557b8a2c57eeb2}{
+void \textbf{BlinkRxTask} (void $\ast$argument)}
+\label{application_8cpp_b4e3c7bbbd4c2813a6557b8a2c57eeb2}
+
+\item 
+void \hyperlink{application_8cpp_7f30ad6470cf9043a30bff819d8e86cb}{ChangeAnalogFlowRateTask} (void $\ast$argument)
+\item 
+void \hyperlink{application_8cpp_c3ed7f569edf91186e63a742c756fdaa}{USARTTxTask} (void $\ast$argument)
+\item 
+void \hyperlink{application_8cpp_276ddc31e26d0b9fb0b0311d97aad783}{init\_\-application} (void)
+\begin{CompactList}\small\item\em : создание и запуск потоков и очередей приложения \item\end{CompactList}\item 
+void \hyperlink{application_8cpp_e494a9643f29b87d6d81e5264e60e57b}{HAL\_\-UART\_\-RxCpltCallback} (UART\_\-HandleTypeDef $\ast$huart)
+\begin{CompactList}\small\item\em : Окончание приема байта через USART принятый байт заталкивается в первичную байтовую очередь \item\end{CompactList}\end{CompactItemize}
+\subsection*{Переменные}
+\begin{CompactItemize}
+\item 
+\hypertarget{application_8cpp_8594068b3f41e502167544b8af62d8a7}{
+xQueueHandle \textbf{RxQueue}}
+\label{application_8cpp_8594068b3f41e502167544b8af62d8a7}
+
+\item 
+\hypertarget{application_8cpp_6d46a0b825c28a935ee0acb4bece12c2}{
+xQueueHandle \hyperlink{application_8cpp_6d46a0b825c28a935ee0acb4bece12c2}{RxMessageQueue}}
+\label{application_8cpp_6d46a0b825c28a935ee0acb4bece12c2}
+
+\begin{CompactList}\small\item\em recieve byte queue \item\end{CompactList}\item 
+\hypertarget{application_8cpp_04bb883e821c4884fdf7e93e978292d6}{
+xQueueHandle \hyperlink{application_8cpp_04bb883e821c4884fdf7e93e978292d6}{TxQueue}}
+\label{application_8cpp_04bb883e821c4884fdf7e93e978292d6}
+
+\begin{CompactList}\small\item\em recieve message queue \item\end{CompactList}\item 
+\hypertarget{application_8cpp_f72603d48c085041724a72a2909f41ff}{
+xQueueHandle \hyperlink{application_8cpp_f72603d48c085041724a72a2909f41ff}{AnalogFlowRateQueue}}
+\label{application_8cpp_f72603d48c085041724a72a2909f41ff}
+
+\begin{CompactList}\small\item\em transmit queue \item\end{CompactList}\item 
+\hypertarget{application_8cpp_8cd94a8e36a64f3de2b578ca6c364084}{
+SemaphoreHandle\_\-t \hyperlink{application_8cpp_8cd94a8e36a64f3de2b578ca6c364084}{xBlinkRxSemaphore}}
+\label{application_8cpp_8cd94a8e36a64f3de2b578ca6c364084}
+
+\begin{CompactList}\small\item\em ADC and DAC rate control queue. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Подробное описание}
+: содержит код задач RTOS 
+
+\begin{Desc}
+\item[Автор:]: rual \end{Desc}
+\begin{Desc}
+\item[Дата:]: 18.07.2018 \end{Desc}
+
+
+\subsection{Функции}
+\hypertarget{application_8cpp_7f30ad6470cf9043a30bff819d8e86cb}{
+\index{application.cpp@{application.cpp}!ChangeAnalogFlowRateTask@{ChangeAnalogFlowRateTask}}
+\index{ChangeAnalogFlowRateTask@{ChangeAnalogFlowRateTask}!application.cpp@{application.cpp}}
+\subsubsection[{ChangeAnalogFlowRateTask}]{\setlength{\rightskip}{0pt plus 5cm}void ChangeAnalogFlowRateTask (void $\ast$ {\em argument})}}
+\label{application_8cpp_7f30ad6470cf9043a30bff819d8e86cb}
+
+
+ChangeAnalogFlowRateTask function $\ast$ задача выполняет смену скарости аналогового потока. $\ast$ при простое выполняет вычисление среднего значения $\ast$ буфера за последнюю секунду $\ast$ 
+
+выполняем изменение скорости аналогового потока
+
+подсчет среднего значения аналогового потока \hypertarget{application_8cpp_e494a9643f29b87d6d81e5264e60e57b}{
+\index{application.cpp@{application.cpp}!HAL\_\-UART\_\-RxCpltCallback@{HAL\_\-UART\_\-RxCpltCallback}}
+\index{HAL\_\-UART\_\-RxCpltCallback@{HAL\_\-UART\_\-RxCpltCallback}!application.cpp@{application.cpp}}
+\subsubsection[{HAL\_\-UART\_\-RxCpltCallback}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-UART\_\-RxCpltCallback (UART\_\-HandleTypeDef $\ast$ {\em huart})}}
+\label{application_8cpp_e494a9643f29b87d6d81e5264e60e57b}
+
+
+: Окончание приема байта через USART принятый байт заталкивается в первичную байтовую очередь 
+
+
+
+вот это не есть ОПТИМАЛЬНО, лучше было просто забирать
+
+значение DR в обработчике, но HAL не предполагает простую настройку прерывания без софтового обвеса \hypertarget{application_8cpp_276ddc31e26d0b9fb0b0311d97aad783}{
+\index{application.cpp@{application.cpp}!init\_\-application@{init\_\-application}}
+\index{init\_\-application@{init\_\-application}!application.cpp@{application.cpp}}
+\subsubsection[{init\_\-application}]{\setlength{\rightskip}{0pt plus 5cm}void init\_\-application (void)}}
+\label{application_8cpp_276ddc31e26d0b9fb0b0311d97aad783}
+
+
+: создание и запуск потоков и очередей приложения 
+
+init\_\-application \begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em :}]Нет \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращает:]: Нет \end{Desc}
+
+
+Semaphore create
+
+Task create
+
+Queue create \hypertarget{application_8cpp_712ca584b4c312df33995aa10720bcf7}{
+\index{application.cpp@{application.cpp}!RxParseTask@{RxParseTask}}
+\index{RxParseTask@{RxParseTask}!application.cpp@{application.cpp}}
+\subsubsection[{RxParseTask}]{\setlength{\rightskip}{0pt plus 5cm}void RxParseTask (void $\ast$ {\em argument})}}
+\label{application_8cpp_712ca584b4c312df33995aa10720bcf7}
+
+
+
+
+исскуственная задержка для загрузки очереди \hypertarget{application_8cpp_798d1866c1e486b1f7dabe93ab9ffa92}{
+\index{application.cpp@{application.cpp}!USARTRXTask@{USARTRXTask}}
+\index{USARTRXTask@{USARTRXTask}!application.cpp@{application.cpp}}
+\subsubsection[{USARTRXTask}]{\setlength{\rightskip}{0pt plus 5cm}void USARTRXTask (void $\ast$ {\em argument})}}
+\label{application_8cpp_798d1866c1e486b1f7dabe93ab9ffa92}
+
+
+RX blinck semaphore. 
+
+USARTRXTask  выбирает принятые байты из очереди RxQueue и формирует очередь сообщений RxMessageQueue 
+
+очередь сообщений переполнена \hypertarget{application_8cpp_c3ed7f569edf91186e63a742c756fdaa}{
+\index{application.cpp@{application.cpp}!USARTTxTask@{USARTTxTask}}
+\index{USARTTxTask@{USARTTxTask}!application.cpp@{application.cpp}}
+\subsubsection[{USARTTxTask}]{\setlength{\rightskip}{0pt plus 5cm}void USARTTxTask (void $\ast$ {\em argument})}}
+\label{application_8cpp_c3ed7f569edf91186e63a742c756fdaa}
+
+
+USARTTxTask  передает и формирует очередь сообщений 
+
+мигаем синим СВД при выполненни команды 

@@ -1,0 +1,68 @@
+\hypertarget{application_8hpp}{
+\section{Файл D:/Project/Cortex/test\_\-prog/Src/application.hpp}
+\label{application_8hpp}\index{D:/Project/Cortex/test\_\-prog/Src/application.hpp@{D:/Project/Cortex/test\_\-prog/Src/application.hpp}}
+}
+: содержит класс, использующий STL, и функцию для распознования команды в строке  
+
+
+{\tt \#include \char`\"{}main.h\char`\"{}}\par
+{\tt \#include \char`\"{}cmsis\_\-os.h\char`\"{}}\par
+{\tt \#include \char`\"{}stm32f3xx\_\-hal.h\char`\"{}}\par
+{\tt \#include $<$strstream$>$}\par
+{\tt \#include $<$string$>$}\par
+{\tt \#include $<$map$>$}\par
+{\tt \#include $<$string.h$>$}\par
+\subsection*{Классы}
+\begin{CompactItemize}
+\item 
+class \hyperlink{class_command_parsing}{CommandParsing}
+\end{CompactItemize}
+\subsection*{Функции}
+\begin{CompactItemize}
+\item 
+\hyperlink{class_command_parsing_614d78523d2c549667f60ebbb7c8cf0a}{CommandParsing::enCmd\_\-t} \hyperlink{application_8hpp_5f6746b4a57d682f518623bbc7982363}{GetCommand} (char $\ast$rx\_\-message)
+\end{CompactItemize}
+\subsection*{Переменные}
+\begin{CompactItemize}
+\item 
+UART\_\-HandleTypeDef \hyperlink{application_8hpp_2cf715bef37f7e8ef385a30974a5f0d5}{huart1}
+\begin{CompactList}\small\item\em прототип глобальной струтуры USART1. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Подробное описание}
+: содержит класс, использующий STL, и функцию для распознования команды в строке 
+
+\begin{Desc}
+\item[Автор:]: rual \end{Desc}
+\begin{Desc}
+\item[Дата:]: 18.07.2018 \end{Desc}
+
+
+\subsection{Функции}
+\hypertarget{application_8hpp_5f6746b4a57d682f518623bbc7982363}{
+\index{application.hpp@{application.hpp}!GetCommand@{GetCommand}}
+\index{GetCommand@{GetCommand}!application.hpp@{application.hpp}}
+\subsubsection[{GetCommand}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CommandParsing::enCmd\_\-t} GetCommand (char $\ast$ {\em rx\_\-message})}}
+\label{application_8hpp_5f6746b4a57d682f518623bbc7982363}
+
+
+GetCommand выполняет распознавание команды \begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em char$\ast$}]rx\_\-message стандартная строка, содержащая команду \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращает:]одно из значений enCmd\_\-t, соответсвующая команде, либо, если команда не распознана - CMD\_\-NULL \end{Desc}
+
+
+\subsection{Переменные}
+\hypertarget{application_8hpp_2cf715bef37f7e8ef385a30974a5f0d5}{
+\index{application.hpp@{application.hpp}!huart1@{huart1}}
+\index{huart1@{huart1}!application.hpp@{application.hpp}}
+\subsubsection[{huart1}]{\setlength{\rightskip}{0pt plus 5cm}UART\_\-HandleTypeDef {\bf huart1}}}
+\label{application_8hpp_2cf715bef37f7e8ef385a30974a5f0d5}
+
+
+прототип глобальной струтуры USART1. 
+
+для использоваания класса map библиотеки STL для дешифровки команды $\ast$ раскоментируйте define USE\_\-STL, код рабочий и компилируется корректно, $\ast$ но на платформе STM32F3Discovery не запускается из-за недостатка RAM $\ast$ В рабочей версии программы применена стандартная библиотека string.h $\ast$ и более легкая функция strcmp() 

@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>test_prog: Файл D:/Project/Cortex/test_prog/Src/application.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Создано системой Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="modules.html"><span>Группы</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Файл D:/Project/Cortex/test_prog/Src/application.cpp</h1>: содержит код задач RTOS  
+<a href="#_details">Подробнее...</a>
+<p>
+<code>#include &quot;<a class="el" href="application_8hpp-source.html">application.hpp</a>&quot;</code><br>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Макросы</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="f68c3a5ad6ffce6c97fff154856a823d"></a><!-- doxytag: member="application.cpp::SEPARATOR" ref="f68c3a5ad6ffce6c97fff154856a823d" args="" -->
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8cpp.html#f68c3a5ad6ffce6c97fff154856a823d">SEPARATOR</a>&nbsp;&nbsp;&nbsp;13</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">последний символ сообщения. <br></td></tr>
+<tr><td colspan="2"><br><h2>Перечисления</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8cpp.html#a5664f5f83a4947029ebff8be4511941">enTx_t</a> { <br>
+&nbsp;&nbsp;<b>TX_NULL</b>, 
+<b>TX_ERROR</b>, 
+<b>TX_BUSY</b>, 
+<b>TX_OK</b>, 
+<br>
+&nbsp;&nbsp;<b>TX_ADC</b>
+<br>
+ }</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">идентификаторы ответов. <br></td></tr>
+<tr><td colspan="2"><br><h2>Функции</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8cpp.html#798d1866c1e486b1f7dabe93ab9ffa92">USARTRXTask</a> (void *argument)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">RX blinck semaphore.  <a href="#798d1866c1e486b1f7dabe93ab9ffa92"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8cpp.html#712ca584b4c312df33995aa10720bcf7">RxParseTask</a> (void *argument)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="b4e3c7bbbd4c2813a6557b8a2c57eeb2"></a><!-- doxytag: member="application.cpp::BlinkRxTask" ref="b4e3c7bbbd4c2813a6557b8a2c57eeb2" args="(void *argument)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>BlinkRxTask</b> (void *argument)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8cpp.html#7f30ad6470cf9043a30bff819d8e86cb">ChangeAnalogFlowRateTask</a> (void *argument)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8cpp.html#c3ed7f569edf91186e63a742c756fdaa">USARTTxTask</a> (void *argument)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8cpp.html#276ddc31e26d0b9fb0b0311d97aad783">init_application</a> (void)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">: создание и запуск потоков и очередей приложения  <a href="#276ddc31e26d0b9fb0b0311d97aad783"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8cpp.html#e494a9643f29b87d6d81e5264e60e57b">HAL_UART_RxCpltCallback</a> (UART_HandleTypeDef *huart)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">: Окончание приема байта через USART принятый байт заталкивается в первичную байтовую очередь  <a href="#e494a9643f29b87d6d81e5264e60e57b"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Переменные</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="8594068b3f41e502167544b8af62d8a7"></a><!-- doxytag: member="application.cpp::RxQueue" ref="8594068b3f41e502167544b8af62d8a7" args="" -->
+xQueueHandle&nbsp;</td><td class="memItemRight" valign="bottom"><b>RxQueue</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="6d46a0b825c28a935ee0acb4bece12c2"></a><!-- doxytag: member="application.cpp::RxMessageQueue" ref="6d46a0b825c28a935ee0acb4bece12c2" args="" -->
+xQueueHandle&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8cpp.html#6d46a0b825c28a935ee0acb4bece12c2">RxMessageQueue</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">recieve byte queue <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="04bb883e821c4884fdf7e93e978292d6"></a><!-- doxytag: member="application.cpp::TxQueue" ref="04bb883e821c4884fdf7e93e978292d6" args="" -->
+xQueueHandle&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8cpp.html#04bb883e821c4884fdf7e93e978292d6">TxQueue</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">recieve message queue <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="f72603d48c085041724a72a2909f41ff"></a><!-- doxytag: member="application.cpp::AnalogFlowRateQueue" ref="f72603d48c085041724a72a2909f41ff" args="" -->
+xQueueHandle&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8cpp.html#f72603d48c085041724a72a2909f41ff">AnalogFlowRateQueue</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">transmit queue <br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="8cd94a8e36a64f3de2b578ca6c364084"></a><!-- doxytag: member="application.cpp::xBlinkRxSemaphore" ref="8cd94a8e36a64f3de2b578ca6c364084" args="" -->
+SemaphoreHandle_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="application_8cpp.html#8cd94a8e36a64f3de2b578ca6c364084">xBlinkRxSemaphore</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ADC and DAC rate control queue. <br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Подробное описание</h2>
+: содержит код задач RTOS 
+<p>
+<dl class="author" compact><dt><b>Автор:</b></dt><dd>: rual </dd></dl>
+<dl class="date" compact><dt><b>Дата:</b></dt><dd>: 18.07.2018 </dd></dl>
+<hr><h2>Функции</h2>
+<a class="anchor" name="7f30ad6470cf9043a30bff819d8e86cb"></a><!-- doxytag: member="application.cpp::ChangeAnalogFlowRateTask" ref="7f30ad6470cf9043a30bff819d8e86cb" args="(void *argument)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChangeAnalogFlowRateTask           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>argument</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+ChangeAnalogFlowRateTask function * задача выполняет смену скарости аналогового потока. * при простое выполняет вычисление среднего значения * буфера за последнюю секунду * 
+<p>
+выполняем изменение скорости аналогового потока<p>
+подсчет среднего значения аналогового потока 
+</div>
+</div><p>
+<a class="anchor" name="e494a9643f29b87d6d81e5264e60e57b"></a><!-- doxytag: member="application.cpp::HAL_UART_RxCpltCallback" ref="e494a9643f29b87d6d81e5264e60e57b" args="(UART_HandleTypeDef *huart)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_UART_RxCpltCallback           </td>
+          <td>(</td>
+          <td class="paramtype">UART_HandleTypeDef *&nbsp;</td>
+          <td class="paramname"> <em>huart</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+: Окончание приема байта через USART принятый байт заталкивается в первичную байтовую очередь 
+<p>
+
+<p>
+вот это не есть ОПТИМАЛЬНО, лучше было просто забирать<p>
+значение DR в обработчике, но HAL не предполагает простую настройку прерывания без софтового обвеса 
+</div>
+</div><p>
+<a class="anchor" name="276ddc31e26d0b9fb0b0311d97aad783"></a><!-- doxytag: member="application.cpp::init_application" ref="276ddc31e26d0b9fb0b0311d97aad783" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_application           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+: создание и запуск потоков и очередей приложения 
+<p>
+init_application <dl compact><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>:</em>&nbsp;</td><td>Нет </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Возвращает:</b></dt><dd>: Нет </dd></dl>
+
+<p>
+Semaphore create<p>
+Task create<p>
+Queue create 
+</div>
+</div><p>
+<a class="anchor" name="712ca584b4c312df33995aa10720bcf7"></a><!-- doxytag: member="application.cpp::RxParseTask" ref="712ca584b4c312df33995aa10720bcf7" args="(void *argument)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RxParseTask           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>argument</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+исскуственная задержка для загрузки очереди 
+</div>
+</div><p>
+<a class="anchor" name="798d1866c1e486b1f7dabe93ab9ffa92"></a><!-- doxytag: member="application.cpp::USARTRXTask" ref="798d1866c1e486b1f7dabe93ab9ffa92" args="(void *argument)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void USARTRXTask           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>argument</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+RX blinck semaphore. 
+<p>
+USARTRXTask  выбирает принятые байты из очереди RxQueue и формирует очередь сообщений RxMessageQueue 
+<p>
+очередь сообщений переполнена 
+</div>
+</div><p>
+<a class="anchor" name="c3ed7f569edf91186e63a742c756fdaa"></a><!-- doxytag: member="application.cpp::USARTTxTask" ref="c3ed7f569edf91186e63a742c756fdaa" args="(void *argument)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void USARTTxTask           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>argument</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+USARTTxTask  передает и формирует очередь сообщений 
+<p>
+мигаем синим СВД при выполненни команды 
+</div>
+</div><p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Документация по test_prog. Последние изменения: Mon Jul 30 23:19:59 2018. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>test_prog: Исходный файл C:/Users/kip/Documents/STM32/test_prog/Src/usbd_desc.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Создано системой Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="modules.html"><span>Группы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<h1>C:/Users/kip/Documents/STM32/test_prog/Src/usbd_desc.c</h1><a href="usbd__desc_8c.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00050"></a>00050 <span class="comment">/* Includes ------------------------------------------------------------------*/</span>
+<a name="l00051"></a>00051 <span class="preprocessor">#include "usbd_core.h"</span>
+<a name="l00052"></a>00052 <span class="preprocessor">#include "usbd_desc.h"</span>
+<a name="l00053"></a>00053 <span class="preprocessor">#include "usbd_conf.h"</span>
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055 <span class="comment">/* USER CODE BEGIN INCLUDE */</span>
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 <span class="comment">/* USER CODE END INCLUDE */</span>
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059 <span class="comment">/* Private typedef -----------------------------------------------------------*/</span>
+<a name="l00060"></a>00060 <span class="comment">/* Private define ------------------------------------------------------------*/</span>
+<a name="l00061"></a>00061 <span class="comment">/* Private macro -------------------------------------------------------------*/</span>
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 <span class="comment">/* USER CODE BEGIN PV */</span>
+<a name="l00064"></a>00064 <span class="comment">/* Private variables ---------------------------------------------------------*/</span>
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 <span class="comment">/* USER CODE END PV */</span>
+<a name="l00067"></a>00067 
+<a name="l00081"></a>00081 <span class="comment">/* USER CODE BEGIN PRIVATE_TYPES */</span>
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083 <span class="comment">/* USER CODE END PRIVATE_TYPES */</span>
+<a name="l00084"></a>00084 
+<a name="l00094"></a>00094 <span class="preprocessor">#define USBD_VID     1155</span>
+<a name="l00095"></a>00095 <span class="preprocessor"></span><span class="preprocessor">#define USBD_LANGID_STRING     1033</span>
+<a name="l00096"></a>00096 <span class="preprocessor"></span><span class="preprocessor">#define USBD_MANUFACTURER_STRING     "STMicroelectronics"</span>
+<a name="l00097"></a>00097 <span class="preprocessor"></span><span class="preprocessor">#define USBD_PID_FS     22336</span>
+<a name="l00098"></a>00098 <span class="preprocessor"></span><span class="preprocessor">#define USBD_PRODUCT_STRING_FS     "STM32 Virtual ComPort"</span>
+<a name="l00099"></a>00099 <span class="preprocessor"></span><span class="preprocessor">#define USBD_SERIALNUMBER_STRING_FS     "00000000001A"</span>
+<a name="l00100"></a>00100 <span class="preprocessor"></span><span class="preprocessor">#define USBD_CONFIGURATION_STRING_FS     "CDC Config"</span>
+<a name="l00101"></a>00101 <span class="preprocessor"></span><span class="preprocessor">#define USBD_INTERFACE_STRING_FS     "CDC Interface"</span>
+<a name="l00102"></a>00102 <span class="preprocessor"></span>
+<a name="l00103"></a>00103 <span class="comment">/* USER CODE BEGIN PRIVATE_DEFINES */</span>
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105 <span class="comment">/* USER CODE END PRIVATE_DEFINES */</span>
+<a name="l00106"></a>00106 
+<a name="l00111"></a>00111 <span class="comment">/* USER CODE BEGIN 0 */</span>
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113 <span class="comment">/* USER CODE END 0 */</span>
+<a name="l00114"></a>00114 
+<a name="l00120"></a>00120 <span class="comment">/* USER CODE BEGIN PRIVATE_MACRO */</span>
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122 <span class="comment">/* USER CODE END PRIVATE_MACRO */</span>
+<a name="l00123"></a>00123 
+<a name="l00133"></a>00133 uint8_t * <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g14798be38c08a37163e53167032485ff" title="Return the device descriptor.">USBD_FS_DeviceDescriptor</a>(USBD_SpeedTypeDef speed, uint16_t *length);
+<a name="l00134"></a>00134 uint8_t * <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#gc02628ceb6a6a071e192dcb85063c0cc" title="Return the LangID string descriptor.">USBD_FS_LangIDStrDescriptor</a>(USBD_SpeedTypeDef speed, uint16_t *length);
+<a name="l00135"></a>00135 uint8_t * <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g6427a671827813efe1a46c3dfcb05683" title="Return the manufacturer string descriptor.">USBD_FS_ManufacturerStrDescriptor</a>(USBD_SpeedTypeDef speed, uint16_t *length);
+<a name="l00136"></a>00136 uint8_t * <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g0ec558c0303daabb851d584109a56514" title="Return the product string descriptor.">USBD_FS_ProductStrDescriptor</a>(USBD_SpeedTypeDef speed, uint16_t *length);
+<a name="l00137"></a>00137 uint8_t * <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#gad2a1d1451821845eda602a82b1cd213" title="Return the serial number string descriptor.">USBD_FS_SerialStrDescriptor</a>(USBD_SpeedTypeDef speed, uint16_t *length);
+<a name="l00138"></a>00138 uint8_t * <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g40ed2a0fb60c50a285983a09ba6921d6" title="Return the configuration string descriptor.">USBD_FS_ConfigStrDescriptor</a>(USBD_SpeedTypeDef speed, uint16_t *length);
+<a name="l00139"></a>00139 uint8_t * <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#gb248f43276f92d982ab5853111e4fb10" title="Return the interface string descriptor.">USBD_FS_InterfaceStrDescriptor</a>(USBD_SpeedTypeDef speed, uint16_t *length);
+<a name="l00140"></a>00140 
+<a name="l00141"></a>00141 <span class="preprocessor">#ifdef USB_SUPPORT_USER_STRING_DESC</span>
+<a name="l00142"></a>00142 <span class="preprocessor"></span>uint8_t * USBD_FS_USRStringDesc(USBD_SpeedTypeDef speed, uint8_t idx, uint16_t *length);
+<a name="l00143"></a>00143 <span class="preprocessor">#endif </span><span class="comment">/* USB_SUPPORT_USER_STRING_DESC */</span>
+<a name="l00144"></a>00144 
+<a name="l00154"></a>00154 USBD_DescriptorsTypeDef FS_Desc =
+<a name="l00155"></a>00155 {
+<a name="l00156"></a>00156   <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g14798be38c08a37163e53167032485ff" title="Return the device descriptor.">USBD_FS_DeviceDescriptor</a>
+<a name="l00157"></a>00157 , <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#gc02628ceb6a6a071e192dcb85063c0cc" title="Return the LangID string descriptor.">USBD_FS_LangIDStrDescriptor</a>
+<a name="l00158"></a>00158 , <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g6427a671827813efe1a46c3dfcb05683" title="Return the manufacturer string descriptor.">USBD_FS_ManufacturerStrDescriptor</a>
+<a name="l00159"></a>00159 , <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g0ec558c0303daabb851d584109a56514" title="Return the product string descriptor.">USBD_FS_ProductStrDescriptor</a>
+<a name="l00160"></a>00160 , <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#gad2a1d1451821845eda602a82b1cd213" title="Return the serial number string descriptor.">USBD_FS_SerialStrDescriptor</a>
+<a name="l00161"></a>00161 , <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g40ed2a0fb60c50a285983a09ba6921d6" title="Return the configuration string descriptor.">USBD_FS_ConfigStrDescriptor</a>
+<a name="l00162"></a>00162 , <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#gb248f43276f92d982ab5853111e4fb10" title="Return the interface string descriptor.">USBD_FS_InterfaceStrDescriptor</a>
+<a name="l00163"></a>00163 };
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165 <span class="preprocessor">#if defined ( __ICCARM__ ) </span><span class="comment">/* IAR Compiler */</span>
+<a name="l00166"></a>00166 <span class="preprocessor">  #pragma data_alignment=4</span>
+<a name="l00167"></a>00167 <span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* defined ( __ICCARM__ ) */</span>
+<a name="l00168"></a>00168 
+<a name="l00169"></a><a class="code" href="group___u_s_b_d___d_e_s_c___private___variables.html#g89686ff64ce14e5466980830aea57e07">00169</a> __ALIGN_BEGIN uint8_t USBD_FS_DeviceDesc[USB_LEN_DEV_DESC] <a class="code" href="group___u_s_b_d___d_e_s_c___private___variables.html#g89686ff64ce14e5466980830aea57e07">__ALIGN_END</a> =
+<a name="l00170"></a>00170 {
+<a name="l00171"></a>00171   0x12,                       <span class="comment">/*bLength */</span>
+<a name="l00172"></a>00172   USB_DESC_TYPE_DEVICE,       <span class="comment">/*bDescriptorType*/</span>
+<a name="l00173"></a>00173   0x00,                       <span class="comment">/*bcdUSB */</span>
+<a name="l00174"></a>00174   0x02,
+<a name="l00175"></a>00175   0x02,                       <span class="comment">/*bDeviceClass*/</span>
+<a name="l00176"></a>00176   0x02,                       <span class="comment">/*bDeviceSubClass*/</span>
+<a name="l00177"></a>00177   0x00,                       <span class="comment">/*bDeviceProtocol*/</span>
+<a name="l00178"></a>00178   USB_MAX_EP0_SIZE,           <span class="comment">/*bMaxPacketSize*/</span>
+<a name="l00179"></a>00179   LOBYTE(USBD_VID),           <span class="comment">/*idVendor*/</span>
+<a name="l00180"></a>00180   HIBYTE(USBD_VID),           <span class="comment">/*idVendor*/</span>
+<a name="l00181"></a>00181   LOBYTE(USBD_PID_FS),        <span class="comment">/*idProduct*/</span>
+<a name="l00182"></a>00182   HIBYTE(USBD_PID_FS),        <span class="comment">/*idProduct*/</span>
+<a name="l00183"></a>00183   0x00,                       <span class="comment">/*bcdDevice rel. 2.00*/</span>
+<a name="l00184"></a>00184   0x02,
+<a name="l00185"></a>00185   USBD_IDX_MFC_STR,           <span class="comment">/*Index of manufacturer  string*/</span>
+<a name="l00186"></a>00186   USBD_IDX_PRODUCT_STR,       <span class="comment">/*Index of product string*/</span>
+<a name="l00187"></a>00187   USBD_IDX_SERIAL_STR,        <span class="comment">/*Index of serial number string*/</span>
+<a name="l00188"></a>00188   USBD_MAX_NUM_CONFIGURATION  <span class="comment">/*bNumConfigurations*/</span>
+<a name="l00189"></a>00189 };
+<a name="l00190"></a>00190 
+<a name="l00191"></a>00191 <span class="comment">/* USB_DeviceDescriptor */</span>
+<a name="l00192"></a>00192 
+<a name="l00202"></a>00202 <span class="preprocessor">#if defined ( __ICCARM__ ) </span><span class="comment">/* IAR Compiler */</span>
+<a name="l00203"></a>00203 <span class="preprocessor">  #pragma data_alignment=4</span>
+<a name="l00204"></a>00204 <span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* defined ( __ICCARM__ ) */</span>
+<a name="l00205"></a>00205 
+<a name="l00207"></a>00207 __ALIGN_BEGIN uint8_t USBD_LangIDDesc[USB_LEN_LANGID_STR_DESC] <a class="code" href="group___u_s_b_d___d_e_s_c___private___variables.html#g89686ff64ce14e5466980830aea57e07">__ALIGN_END</a> =
+<a name="l00208"></a>00208 {
+<a name="l00209"></a>00209      USB_LEN_LANGID_STR_DESC,
+<a name="l00210"></a>00210      USB_DESC_TYPE_STRING,
+<a name="l00211"></a>00211      LOBYTE(USBD_LANGID_STRING),
+<a name="l00212"></a>00212      HIBYTE(USBD_LANGID_STRING)
+<a name="l00213"></a>00213 };
+<a name="l00214"></a>00214 
+<a name="l00215"></a>00215 <span class="preprocessor">#if defined ( __ICCARM__ ) </span><span class="comment">/* IAR Compiler */</span>
+<a name="l00216"></a>00216 <span class="preprocessor">  #pragma data_alignment=4</span>
+<a name="l00217"></a>00217 <span class="preprocessor"></span><span class="preprocessor">#endif </span><span class="comment">/* defined ( __ICCARM__ ) */</span>
+<a name="l00218"></a>00218 <span class="comment">/* Internal string descriptor. */</span>
+<a name="l00219"></a>00219 __ALIGN_BEGIN uint8_t USBD_StrDesc[USBD_MAX_STR_DESC_SIZ] <a class="code" href="group___u_s_b_d___d_e_s_c___private___variables.html#g89686ff64ce14e5466980830aea57e07">__ALIGN_END</a>;
+<a name="l00220"></a>00220 
+<a name="l00236"></a><a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g14798be38c08a37163e53167032485ff">00236</a> uint8_t * <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g14798be38c08a37163e53167032485ff" title="Return the device descriptor.">USBD_FS_DeviceDescriptor</a>(USBD_SpeedTypeDef speed, uint16_t *length)
+<a name="l00237"></a>00237 {
+<a name="l00238"></a>00238   *length = <span class="keyword">sizeof</span>(USBD_FS_DeviceDesc);
+<a name="l00239"></a>00239   <span class="keywordflow">return</span> USBD_FS_DeviceDesc;
+<a name="l00240"></a>00240 }
+<a name="l00241"></a>00241 
+<a name="l00248"></a><a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#gc02628ceb6a6a071e192dcb85063c0cc">00248</a> uint8_t * <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#gc02628ceb6a6a071e192dcb85063c0cc" title="Return the LangID string descriptor.">USBD_FS_LangIDStrDescriptor</a>(USBD_SpeedTypeDef speed, uint16_t *length)
+<a name="l00249"></a>00249 {
+<a name="l00250"></a>00250   *length = <span class="keyword">sizeof</span>(USBD_LangIDDesc);
+<a name="l00251"></a>00251   <span class="keywordflow">return</span> USBD_LangIDDesc;
+<a name="l00252"></a>00252 }
+<a name="l00253"></a>00253 
+<a name="l00260"></a><a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g0ec558c0303daabb851d584109a56514">00260</a> uint8_t * <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g0ec558c0303daabb851d584109a56514" title="Return the product string descriptor.">USBD_FS_ProductStrDescriptor</a>(USBD_SpeedTypeDef speed, uint16_t *length)
+<a name="l00261"></a>00261 {
+<a name="l00262"></a>00262   <span class="keywordflow">if</span>(speed == 0)
+<a name="l00263"></a>00263   {
+<a name="l00264"></a>00264     USBD_GetString((uint8_t *)USBD_PRODUCT_STRING_FS, USBD_StrDesc, length);
+<a name="l00265"></a>00265   }
+<a name="l00266"></a>00266   <span class="keywordflow">else</span>
+<a name="l00267"></a>00267   {
+<a name="l00268"></a>00268     USBD_GetString((uint8_t *)USBD_PRODUCT_STRING_FS, USBD_StrDesc, length);
+<a name="l00269"></a>00269   }
+<a name="l00270"></a>00270   <span class="keywordflow">return</span> USBD_StrDesc;
+<a name="l00271"></a>00271 }
+<a name="l00272"></a>00272 
+<a name="l00279"></a><a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g6427a671827813efe1a46c3dfcb05683">00279</a> uint8_t * <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g6427a671827813efe1a46c3dfcb05683" title="Return the manufacturer string descriptor.">USBD_FS_ManufacturerStrDescriptor</a>(USBD_SpeedTypeDef speed, uint16_t *length)
+<a name="l00280"></a>00280 {
+<a name="l00281"></a>00281   USBD_GetString((uint8_t *)USBD_MANUFACTURER_STRING, USBD_StrDesc, length);
+<a name="l00282"></a>00282   <span class="keywordflow">return</span> USBD_StrDesc;
+<a name="l00283"></a>00283 }
+<a name="l00284"></a>00284 
+<a name="l00291"></a><a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#gad2a1d1451821845eda602a82b1cd213">00291</a> uint8_t * <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#gad2a1d1451821845eda602a82b1cd213" title="Return the serial number string descriptor.">USBD_FS_SerialStrDescriptor</a>(USBD_SpeedTypeDef speed, uint16_t *length)
+<a name="l00292"></a>00292 {
+<a name="l00293"></a>00293   <span class="keywordflow">if</span>(speed == USBD_SPEED_HIGH)
+<a name="l00294"></a>00294   {
+<a name="l00295"></a>00295     USBD_GetString((uint8_t *)USBD_SERIALNUMBER_STRING_FS, USBD_StrDesc, length);
+<a name="l00296"></a>00296   }
+<a name="l00297"></a>00297   <span class="keywordflow">else</span>
+<a name="l00298"></a>00298   {
+<a name="l00299"></a>00299     USBD_GetString((uint8_t *)USBD_SERIALNUMBER_STRING_FS, USBD_StrDesc, length);
+<a name="l00300"></a>00300   }
+<a name="l00301"></a>00301   <span class="keywordflow">return</span> USBD_StrDesc;
+<a name="l00302"></a>00302 }
+<a name="l00303"></a>00303 
+<a name="l00310"></a><a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g40ed2a0fb60c50a285983a09ba6921d6">00310</a> uint8_t * <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#g40ed2a0fb60c50a285983a09ba6921d6" title="Return the configuration string descriptor.">USBD_FS_ConfigStrDescriptor</a>(USBD_SpeedTypeDef speed, uint16_t *length)
+<a name="l00311"></a>00311 {
+<a name="l00312"></a>00312   <span class="keywordflow">if</span>(speed == USBD_SPEED_HIGH)
+<a name="l00313"></a>00313   {
+<a name="l00314"></a>00314     USBD_GetString((uint8_t *)USBD_CONFIGURATION_STRING_FS, USBD_StrDesc, length);
+<a name="l00315"></a>00315   }
+<a name="l00316"></a>00316   <span class="keywordflow">else</span>
+<a name="l00317"></a>00317   {
+<a name="l00318"></a>00318     USBD_GetString((uint8_t *)USBD_CONFIGURATION_STRING_FS, USBD_StrDesc, length);
+<a name="l00319"></a>00319   }
+<a name="l00320"></a>00320   <span class="keywordflow">return</span> USBD_StrDesc;
+<a name="l00321"></a>00321 }
+<a name="l00322"></a>00322 
+<a name="l00329"></a><a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#gb248f43276f92d982ab5853111e4fb10">00329</a> uint8_t * <a class="code" href="group___u_s_b_d___d_e_s_c___private___functions.html#gb248f43276f92d982ab5853111e4fb10" title="Return the interface string descriptor.">USBD_FS_InterfaceStrDescriptor</a>(USBD_SpeedTypeDef speed, uint16_t *length)
+<a name="l00330"></a>00330 {
+<a name="l00331"></a>00331   <span class="keywordflow">if</span>(speed == 0)
+<a name="l00332"></a>00332   {
+<a name="l00333"></a>00333     USBD_GetString((uint8_t *)USBD_INTERFACE_STRING_FS, USBD_StrDesc, length);
+<a name="l00334"></a>00334   }
+<a name="l00335"></a>00335   <span class="keywordflow">else</span>
+<a name="l00336"></a>00336   {
+<a name="l00337"></a>00337     USBD_GetString((uint8_t *)USBD_INTERFACE_STRING_FS, USBD_StrDesc, length);
+<a name="l00338"></a>00338   }
+<a name="l00339"></a>00339   <span class="keywordflow">return</span> USBD_StrDesc;
+<a name="l00340"></a>00340 }
+<a name="l00341"></a>00341 
+<a name="l00354"></a>00354 <span class="comment">/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/</span>
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Документация по test_prog. Последние изменения: Thu Jul 19 12:27:42 2018. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

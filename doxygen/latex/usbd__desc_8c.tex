@@ -1,0 +1,91 @@
+\hypertarget{usbd__desc_8c}{
+\section{Файл D:/Project/Cortex/test\_\-prog/Src/usbd\_\-desc.c}
+\label{usbd__desc_8c}\index{D:/Project/Cortex/test\_\-prog/Src/usbd\_\-desc.c@{D:/Project/Cortex/test\_\-prog/Src/usbd\_\-desc.c}}
+}
+: This file implements the USB device descriptors.  
+
+
+{\tt \#include \char`\"{}usbd\_\-core.h\char`\"{}}\par
+{\tt \#include \char`\"{}usbd\_\-desc.h\char`\"{}}\par
+{\tt \#include \char`\"{}usbd\_\-conf.h\char`\"{}}\par
+\subsection*{Макросы}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___u_s_b_d___d_e_s_c___private___defines_gc5251397ce2246b546b472cd802e6d62}{
+\#define \textbf{USBD\_\-VID}~1155}
+\label{group___u_s_b_d___d_e_s_c___private___defines_gc5251397ce2246b546b472cd802e6d62}
+
+\item 
+\hypertarget{group___u_s_b_d___d_e_s_c___private___defines_g070dd542d4d914e86fdf103fa5fdd72f}{
+\#define \textbf{USBD\_\-LANGID\_\-STRING}~1033}
+\label{group___u_s_b_d___d_e_s_c___private___defines_g070dd542d4d914e86fdf103fa5fdd72f}
+
+\item 
+\hypertarget{group___u_s_b_d___d_e_s_c___private___defines_gee0c9fd7e8265b90126028919cd863a6}{
+\#define \textbf{USBD\_\-MANUFACTURER\_\-STRING}~\char`\"{}STMicroelectronics\char`\"{}}
+\label{group___u_s_b_d___d_e_s_c___private___defines_gee0c9fd7e8265b90126028919cd863a6}
+
+\item 
+\hypertarget{group___u_s_b_d___d_e_s_c___private___defines_ga6f9e36da39c9881963cabf42df4d216}{
+\#define \textbf{USBD\_\-PID\_\-FS}~22336}
+\label{group___u_s_b_d___d_e_s_c___private___defines_ga6f9e36da39c9881963cabf42df4d216}
+
+\item 
+\hypertarget{group___u_s_b_d___d_e_s_c___private___defines_ga11017e20e3a2f1ef891b86212c4b730}{
+\#define \textbf{USBD\_\-PRODUCT\_\-STRING\_\-FS}~\char`\"{}STM32 Virtual ComPort\char`\"{}}
+\label{group___u_s_b_d___d_e_s_c___private___defines_ga11017e20e3a2f1ef891b86212c4b730}
+
+\item 
+\hypertarget{group___u_s_b_d___d_e_s_c___private___defines_g0057246fa742e75846bb0467a84921fc}{
+\#define \textbf{USBD\_\-SERIALNUMBER\_\-STRING\_\-FS}~\char`\"{}00000000001A\char`\"{}}
+\label{group___u_s_b_d___d_e_s_c___private___defines_g0057246fa742e75846bb0467a84921fc}
+
+\item 
+\hypertarget{group___u_s_b_d___d_e_s_c___private___defines_gca5e66e8b6c89a896f6ad16f9a68128f}{
+\#define \textbf{USBD\_\-CONFIGURATION\_\-STRING\_\-FS}~\char`\"{}CDC Config\char`\"{}}
+\label{group___u_s_b_d___d_e_s_c___private___defines_gca5e66e8b6c89a896f6ad16f9a68128f}
+
+\item 
+\hypertarget{group___u_s_b_d___d_e_s_c___private___defines_g2562ccc9162020b79f07d813eba10ddb}{
+\#define \textbf{USBD\_\-INTERFACE\_\-STRING\_\-FS}~\char`\"{}CDC Interface\char`\"{}}
+\label{group___u_s_b_d___d_e_s_c___private___defines_g2562ccc9162020b79f07d813eba10ddb}
+
+\end{CompactItemize}
+\subsection*{Функции}
+\begin{CompactItemize}
+\item 
+uint8\_\-t $\ast$ \hyperlink{group___u_s_b_d___d_e_s_c___private___functions_g14798be38c08a37163e53167032485ff}{USBD\_\-FS\_\-DeviceDescriptor} (USBD\_\-SpeedTypeDef speed, uint16\_\-t $\ast$length)
+\begin{CompactList}\small\item\em Return the device descriptor. \item\end{CompactList}\item 
+uint8\_\-t $\ast$ \hyperlink{group___u_s_b_d___d_e_s_c___private___functions_gc02628ceb6a6a071e192dcb85063c0cc}{USBD\_\-FS\_\-LangIDStrDescriptor} (USBD\_\-SpeedTypeDef speed, uint16\_\-t $\ast$length)
+\begin{CompactList}\small\item\em Return the LangID string descriptor. \item\end{CompactList}\item 
+uint8\_\-t $\ast$ \hyperlink{group___u_s_b_d___d_e_s_c___private___functions_g6427a671827813efe1a46c3dfcb05683}{USBD\_\-FS\_\-ManufacturerStrDescriptor} (USBD\_\-SpeedTypeDef speed, uint16\_\-t $\ast$length)
+\begin{CompactList}\small\item\em Return the manufacturer string descriptor. \item\end{CompactList}\item 
+uint8\_\-t $\ast$ \hyperlink{group___u_s_b_d___d_e_s_c___private___functions_g0ec558c0303daabb851d584109a56514}{USBD\_\-FS\_\-ProductStrDescriptor} (USBD\_\-SpeedTypeDef speed, uint16\_\-t $\ast$length)
+\begin{CompactList}\small\item\em Return the product string descriptor. \item\end{CompactList}\item 
+uint8\_\-t $\ast$ \hyperlink{group___u_s_b_d___d_e_s_c___private___functions_gad2a1d1451821845eda602a82b1cd213}{USBD\_\-FS\_\-SerialStrDescriptor} (USBD\_\-SpeedTypeDef speed, uint16\_\-t $\ast$length)
+\begin{CompactList}\small\item\em Return the serial number string descriptor. \item\end{CompactList}\item 
+uint8\_\-t $\ast$ \hyperlink{group___u_s_b_d___d_e_s_c___private___functions_g40ed2a0fb60c50a285983a09ba6921d6}{USBD\_\-FS\_\-ConfigStrDescriptor} (USBD\_\-SpeedTypeDef speed, uint16\_\-t $\ast$length)
+\begin{CompactList}\small\item\em Return the configuration string descriptor. \item\end{CompactList}\item 
+uint8\_\-t $\ast$ \hyperlink{group___u_s_b_d___d_e_s_c___private___functions_gb248f43276f92d982ab5853111e4fb10}{USBD\_\-FS\_\-InterfaceStrDescriptor} (USBD\_\-SpeedTypeDef speed, uint16\_\-t $\ast$length)
+\begin{CompactList}\small\item\em Return the interface string descriptor. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Переменные}
+\begin{CompactItemize}
+\item 
+USBD\_\-DescriptorsTypeDef \textbf{FS\_\-Desc}
+\item 
+\_\-\_\-ALIGN\_\-BEGIN uint8\_\-t USBD\_\-FS\_\-DeviceDesc\mbox{[}USB\_\-LEN\_\-DEV\_\-DESC\mbox{]} \hyperlink{group___u_s_b_d___d_e_s_c___private___variables_g89686ff64ce14e5466980830aea57e07}{\_\-\_\-ALIGN\_\-END}
+\end{CompactItemize}
+
+
+\subsection{Подробное описание}
+: This file implements the USB device descriptors. 
+
+\begin{Desc}
+\item[Версия:]: v2.0\_\-Cube This notice applies to any and all portions of this file that are not between comment pairs USER CODE BEGIN and USER CODE END. Other portions of this file, whether inserted by the user or by software development tools are owned by their respective copyright owners.\end{Desc}
+Copyright (c) 2018 STMicroelectronics International N.V. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted, provided that the following conditions are met:
+
+1. Redistribution of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. 3. Neither the name of STMicroelectronics nor the names of other contributors to this software may be used to endorse or promote products derived from this software without specific written permission. 4. This software, including modifications and/or derivative works of this software, must execute solely and exclusively on microcontroller or microprocessor devices manufactured by or for STMicroelectronics. 5. Redistribution and use of this software other than as permitted under this license is void and will automatically terminate your rights under this license.
+
+THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS \char`\"{}AS IS\char`\"{} AND ANY EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY RIGHTS ARE DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. IN NO EVENT SHALL STMICROELECTRONICS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 

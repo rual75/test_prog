@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>test_prog: Исходный файл C:/Users/kip/Documents/STM32/test_prog/Src/usb_device.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Создано системой Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="modules.html"><span>Группы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&nbsp;членов&nbsp;всех&nbsp;файлов</span></a></li>
+    </ul>
+  </div>
+<h1>C:/Users/kip/Documents/STM32/test_prog/Src/usb_device.c</h1><a href="usb__device_8c.html">См. документацию.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00050"></a>00050 <span class="comment">/* Includes ------------------------------------------------------------------*/</span>
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052 <span class="preprocessor">#include "usb_device.h"</span>
+<a name="l00053"></a>00053 <span class="preprocessor">#include "usbd_core.h"</span>
+<a name="l00054"></a>00054 <span class="preprocessor">#include "usbd_desc.h"</span>
+<a name="l00055"></a>00055 <span class="preprocessor">#include "usbd_cdc.h"</span>
+<a name="l00056"></a>00056 <span class="preprocessor">#include "usbd_cdc_if.h"</span>
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 <span class="comment">/* USER CODE BEGIN Includes */</span>
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 <span class="comment">/* USER CODE END Includes */</span>
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062 <span class="comment">/* USER CODE BEGIN PV */</span>
+<a name="l00063"></a>00063 <span class="comment">/* Private variables ---------------------------------------------------------*/</span>
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065 <span class="comment">/* USER CODE END PV */</span>
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="comment">/* USER CODE BEGIN PFP */</span>
+<a name="l00068"></a>00068 <span class="comment">/* Private function prototypes -----------------------------------------------*/</span>
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070 <span class="comment">/* USER CODE END PFP */</span>
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 <span class="comment">/* USB Device Core handle declaration. */</span>
+<a name="l00073"></a>00073 USBD_HandleTypeDef hUsbDeviceFS;
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075 <span class="comment">/*</span>
+<a name="l00076"></a>00076 <span class="comment"> * -- Insert your variables declaration here --</span>
+<a name="l00077"></a>00077 <span class="comment"> */</span>
+<a name="l00078"></a>00078 <span class="comment">/* USER CODE BEGIN 0 */</span>
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080 <span class="comment">/* USER CODE END 0 */</span>
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082 <span class="comment">/*</span>
+<a name="l00083"></a>00083 <span class="comment"> * -- Insert your external function declaration here --</span>
+<a name="l00084"></a>00084 <span class="comment"> */</span>
+<a name="l00085"></a>00085 <span class="comment">/* USER CODE BEGIN 1 */</span>
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087 <span class="comment">/* USER CODE END 1 */</span>
+<a name="l00088"></a>00088 
+<a name="l00093"></a><a class="code" href="usb__device_8c.html#dab4f7fc1db4ce2be073d3913209d2af">00093</a> <span class="keywordtype">void</span> <a class="code" href="usb__device_8c.html#dab4f7fc1db4ce2be073d3913209d2af">MX_USB_DEVICE_Init</a>(<span class="keywordtype">void</span>)
+<a name="l00094"></a>00094 {
+<a name="l00095"></a>00095   <span class="comment">/* USER CODE BEGIN USB_DEVICE_Init_PreTreatment */</span>
+<a name="l00096"></a>00096   
+<a name="l00097"></a>00097   <span class="comment">/* USER CODE END USB_DEVICE_Init_PreTreatment */</span>
+<a name="l00098"></a>00098   
+<a name="l00099"></a>00099   <span class="comment">/* Init Device Library, add supported class and start the library. */</span>
+<a name="l00100"></a>00100   USBD_Init(&amp;hUsbDeviceFS, &amp;FS_Desc, DEVICE_FS);
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102   USBD_RegisterClass(&amp;hUsbDeviceFS, &amp;USBD_CDC);
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104   USBD_CDC_RegisterInterface(&amp;hUsbDeviceFS, &amp;USBD_Interface_fops_FS);
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106   USBD_Start(&amp;hUsbDeviceFS);
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108   <span class="comment">/* USER CODE BEGIN USB_DEVICE_Init_PostTreatment */</span>
+<a name="l00109"></a>00109   
+<a name="l00110"></a>00110   <span class="comment">/* USER CODE END USB_DEVICE_Init_PostTreatment */</span>
+<a name="l00111"></a>00111 }
+<a name="l00112"></a>00112 
+<a name="l00121"></a>00121 <span class="comment">/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/</span>
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Документация по test_prog. Последние изменения: Thu Jul 19 12:27:42 2018. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

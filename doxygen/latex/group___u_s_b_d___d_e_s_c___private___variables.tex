@@ -1,0 +1,75 @@
+\hypertarget{group___u_s_b_d___d_e_s_c___private___variables}{
+\section{USBD\_\-DESC\_\-Private\_\-Variables}
+\label{group___u_s_b_d___d_e_s_c___private___variables}\index{USBD\_\-DESC\_\-Private\_\-Variables@{USBD\_\-DESC\_\-Private\_\-Variables}}
+}
+Private variables.  
+
+
+\subsection*{Переменные}
+\begin{CompactItemize}
+\item 
+USBD\_\-DescriptorsTypeDef \textbf{FS\_\-Desc}
+\item 
+\_\-\_\-ALIGN\_\-BEGIN uint8\_\-t USBD\_\-FS\_\-DeviceDesc\mbox{[}USB\_\-LEN\_\-DEV\_\-DESC\mbox{]} \hyperlink{group___u_s_b_d___d_e_s_c___private___variables_g89686ff64ce14e5466980830aea57e07}{\_\-\_\-ALIGN\_\-END}
+\end{CompactItemize}
+
+
+\subsection{Подробное описание}
+Private variables. 
+
+\subsection{Переменные}
+\hypertarget{group___u_s_b_d___d_e_s_c___private___variables_g89686ff64ce14e5466980830aea57e07}{
+\index{USBD\_\-DESC\_\-Private\_\-Variables@{USBD\_\-DESC\_\-Private\_\-Variables}!\_\-\_\-ALIGN\_\-END@{\_\-\_\-ALIGN\_\-END}}
+\index{\_\-\_\-ALIGN\_\-END@{\_\-\_\-ALIGN\_\-END}!USBD_DESC_Private_Variables@{USBD\_\-DESC\_\-Private\_\-Variables}}
+\subsubsection[{\_\-\_\-ALIGN\_\-END}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-ALIGN\_\-BEGIN uint8\_\-t USBD\_\-StrDesc \mbox{[}USBD\_\-MAX\_\-STR\_\-DESC\_\-SIZ\mbox{]} {\bf \_\-\_\-ALIGN\_\-END}}}
+\label{group___u_s_b_d___d_e_s_c___private___variables_g89686ff64ce14e5466980830aea57e07}
+
+
+\textbf{Инициализатор}
+
+\begin{Code}\begin{verbatim}
+{
+  0x12,                       
+  USB_DESC_TYPE_DEVICE,       
+  0x00,                       
+  0x02,
+  0x02,                       
+  0x02,                       
+  0x00,                       
+  USB_MAX_EP0_SIZE,           
+  LOBYTE(USBD_VID),           
+  HIBYTE(USBD_VID),           
+  LOBYTE(USBD_PID_FS),        
+  HIBYTE(USBD_PID_FS),        
+  0x00,                       
+  0x02,
+  USBD_IDX_MFC_STR,           
+  USBD_IDX_PRODUCT_STR,       
+  USBD_IDX_SERIAL_STR,        
+  USBD_MAX_NUM_CONFIGURATION  
+}
+\end{verbatim}
+\end{Code}
+USB standard device descriptor.
+
+USB lang indentifier descriptor. \hypertarget{group___u_s_b_d___d_e_s_c___private___variables_ge36d67393118d9d8531a8d633e23a797}{
+\index{USBD\_\-DESC\_\-Private\_\-Variables@{USBD\_\-DESC\_\-Private\_\-Variables}!FS\_\-Desc@{FS\_\-Desc}}
+\index{FS\_\-Desc@{FS\_\-Desc}!USBD_DESC_Private_Variables@{USBD\_\-DESC\_\-Private\_\-Variables}}
+\subsubsection[{FS\_\-Desc}]{\setlength{\rightskip}{0pt plus 5cm}USBD\_\-DescriptorsTypeDef FS\_\-Desc}}
+\label{group___u_s_b_d___d_e_s_c___private___variables_ge36d67393118d9d8531a8d633e23a797}
+
+
+\textbf{Инициализатор}
+
+\begin{Code}\begin{verbatim}
+{
+  USBD_FS_DeviceDescriptor
+, USBD_FS_LangIDStrDescriptor
+, USBD_FS_ManufacturerStrDescriptor
+, USBD_FS_ProductStrDescriptor
+, USBD_FS_SerialStrDescriptor
+, USBD_FS_ConfigStrDescriptor
+, USBD_FS_InterfaceStrDescriptor
+}
+\end{verbatim}
+\end{Code}

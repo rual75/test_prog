@@ -1,0 +1,691 @@
+\hypertarget{usbd__conf_8c}{
+\section{Файл D:/Project/Cortex/test\_\-prog/Src/usbd\_\-conf.c}
+\label{usbd__conf_8c}\index{D:/Project/Cortex/test\_\-prog/Src/usbd\_\-conf.c@{D:/Project/Cortex/test\_\-prog/Src/usbd\_\-conf.c}}
+}
+: This file implements the board support package for the USB device library  
+
+
+{\tt \#include \char`\"{}stm32f3xx.h\char`\"{}}\par
+{\tt \#include \char`\"{}stm32f3xx\_\-hal.h\char`\"{}}\par
+{\tt \#include \char`\"{}usbd\_\-def.h\char`\"{}}\par
+{\tt \#include \char`\"{}usbd\_\-core.h\char`\"{}}\par
+{\tt \#include \char`\"{}usbd\_\-cdc.h\char`\"{}}\par
+\subsection*{Функции}
+\begin{CompactItemize}
+\item 
+void \hyperlink{usbd__conf_8c_829116a51f1db1a72ebd1120f60719d5}{\_\-Error\_\-Handler} (char $\ast$file, int line)
+\begin{CompactList}\small\item\em This function is executed in case of error occurrence. \item\end{CompactList}\item 
+void \hyperlink{usbd__conf_8c_3d04e2831c0a46d0e6719c1a2caba5b1}{HAL\_\-PCDEx\_\-SetConnectionState} (PCD\_\-HandleTypeDef $\ast$hpcd, uint8\_\-t state)
+\begin{CompactList}\small\item\em Software device connection. \item\end{CompactList}\item 
+void \hyperlink{usbd__conf_8c_b88e6d72062dc5d478ab12b435695ccb}{HAL\_\-PCD\_\-MspInit} (PCD\_\-HandleTypeDef $\ast$pcdHandle)
+\item 
+void \hyperlink{usbd__conf_8c_0a53f3c7c744fcfa7bdba6e9badc70d4}{HAL\_\-PCD\_\-MspDeInit} (PCD\_\-HandleTypeDef $\ast$pcdHandle)
+\item 
+void \hyperlink{usbd__conf_8c_9d72aa4d3d984b164047b081d4566f6d}{HAL\_\-PCD\_\-SetupStageCallback} (PCD\_\-HandleTypeDef $\ast$hpcd)
+\begin{CompactList}\small\item\em Setup stage callback. \item\end{CompactList}\item 
+void \hyperlink{usbd__conf_8c_2f1ac834d9677dcae7d8973828f81149}{HAL\_\-PCD\_\-DataOutStageCallback} (PCD\_\-HandleTypeDef $\ast$hpcd, uint8\_\-t epnum)
+\begin{CompactList}\small\item\em Data Out stage callback. \item\end{CompactList}\item 
+void \hyperlink{usbd__conf_8c_1679f5c50539a3dfca1391557e7a757b}{HAL\_\-PCD\_\-DataInStageCallback} (PCD\_\-HandleTypeDef $\ast$hpcd, uint8\_\-t epnum)
+\begin{CompactList}\small\item\em Data In stage callback. \item\end{CompactList}\item 
+void \hyperlink{usbd__conf_8c_85c99eeb4aa17d8ff5298efff92ac28e}{HAL\_\-PCD\_\-SOFCallback} (PCD\_\-HandleTypeDef $\ast$hpcd)
+\begin{CompactList}\small\item\em SOF callback. \item\end{CompactList}\item 
+void \hyperlink{usbd__conf_8c_f4fbef977092aa525c6b1668ffbec77b}{HAL\_\-PCD\_\-ResetCallback} (PCD\_\-HandleTypeDef $\ast$hpcd)
+\begin{CompactList}\small\item\em Reset callback. \item\end{CompactList}\item 
+void \hyperlink{usbd__conf_8c_0e14acd4564979743bc0a89aa5f15428}{HAL\_\-PCD\_\-SuspendCallback} (PCD\_\-HandleTypeDef $\ast$hpcd)
+\begin{CompactList}\small\item\em Suspend callback. When Low power mode is enabled the debug cannot be used (IAR, Keil doesn't support it). \item\end{CompactList}\item 
+void \hyperlink{usbd__conf_8c_0386a36b921cd51dd6e50103c3cd33b1}{HAL\_\-PCD\_\-ResumeCallback} (PCD\_\-HandleTypeDef $\ast$hpcd)
+\begin{CompactList}\small\item\em Resume callback. When Low power mode is enabled the debug cannot be used (IAR, Keil doesn't support it). \item\end{CompactList}\item 
+void \hyperlink{usbd__conf_8c_4274f129d782f0a3c9a10b5bbe022cd4}{HAL\_\-PCD\_\-ISOOUTIncompleteCallback} (PCD\_\-HandleTypeDef $\ast$hpcd, uint8\_\-t epnum)
+\begin{CompactList}\small\item\em ISOOUTIncomplete callback. \item\end{CompactList}\item 
+void \hyperlink{usbd__conf_8c_8f4041d553ef2fb326c6e483797f99a8}{HAL\_\-PCD\_\-ISOINIncompleteCallback} (PCD\_\-HandleTypeDef $\ast$hpcd, uint8\_\-t epnum)
+\begin{CompactList}\small\item\em ISOINIncomplete callback. \item\end{CompactList}\item 
+void \hyperlink{usbd__conf_8c_0c449541523759cf62be9c9d47540c5d}{HAL\_\-PCD\_\-ConnectCallback} (PCD\_\-HandleTypeDef $\ast$hpcd)
+\begin{CompactList}\small\item\em Connect callback. \item\end{CompactList}\item 
+void \hyperlink{usbd__conf_8c_25f930b5fe696224f8e71dacf5f324b4}{HAL\_\-PCD\_\-DisconnectCallback} (PCD\_\-HandleTypeDef $\ast$hpcd)
+\begin{CompactList}\small\item\em Disconnect callback. \item\end{CompactList}\item 
+USBD\_\-StatusTypeDef \hyperlink{usbd__conf_8c_24b61e95db7e4c7ad30a835e8d905943}{USBD\_\-LL\_\-Init} (USBD\_\-HandleTypeDef $\ast$pdev)
+\begin{CompactList}\small\item\em Initializes the low level portion of the device driver. \item\end{CompactList}\item 
+USBD\_\-StatusTypeDef \hyperlink{usbd__conf_8c_ae9bfb6a27b11f232fc55a1d1b28be24}{USBD\_\-LL\_\-DeInit} (USBD\_\-HandleTypeDef $\ast$pdev)
+\begin{CompactList}\small\item\em De-Initializes the low level portion of the device driver. \item\end{CompactList}\item 
+USBD\_\-StatusTypeDef \hyperlink{usbd__conf_8c_43e53e424e9850d8261e1f9a1be53348}{USBD\_\-LL\_\-Start} (USBD\_\-HandleTypeDef $\ast$pdev)
+\begin{CompactList}\small\item\em Starts the low level portion of the device driver. \item\end{CompactList}\item 
+USBD\_\-StatusTypeDef \hyperlink{usbd__conf_8c_c522b28139c1868a2e24d044fc8288fd}{USBD\_\-LL\_\-Stop} (USBD\_\-HandleTypeDef $\ast$pdev)
+\begin{CompactList}\small\item\em Stops the low level portion of the device driver. \item\end{CompactList}\item 
+USBD\_\-StatusTypeDef \hyperlink{usbd__conf_8c_d96254d74d95496ffb5f6f2248585cb0}{USBD\_\-LL\_\-OpenEP} (USBD\_\-HandleTypeDef $\ast$pdev, uint8\_\-t ep\_\-addr, uint8\_\-t ep\_\-type, uint16\_\-t ep\_\-mps)
+\begin{CompactList}\small\item\em Opens an endpoint of the low level driver. \item\end{CompactList}\item 
+USBD\_\-StatusTypeDef \hyperlink{usbd__conf_8c_e12e7de3c398d5663976bf11faa63572}{USBD\_\-LL\_\-CloseEP} (USBD\_\-HandleTypeDef $\ast$pdev, uint8\_\-t ep\_\-addr)
+\begin{CompactList}\small\item\em Closes an endpoint of the low level driver. \item\end{CompactList}\item 
+USBD\_\-StatusTypeDef \hyperlink{usbd__conf_8c_10080ed9555110afba809de968314985}{USBD\_\-LL\_\-FlushEP} (USBD\_\-HandleTypeDef $\ast$pdev, uint8\_\-t ep\_\-addr)
+\begin{CompactList}\small\item\em Flushes an endpoint of the Low Level Driver. \item\end{CompactList}\item 
+USBD\_\-StatusTypeDef \hyperlink{usbd__conf_8c_bc2b4a7c8307e04955b015fd32057ec7}{USBD\_\-LL\_\-StallEP} (USBD\_\-HandleTypeDef $\ast$pdev, uint8\_\-t ep\_\-addr)
+\begin{CompactList}\small\item\em Sets a Stall condition on an endpoint of the Low Level Driver. \item\end{CompactList}\item 
+USBD\_\-StatusTypeDef \hyperlink{usbd__conf_8c_d4fa6f2eeefe95d07148c6c53d111eae}{USBD\_\-LL\_\-ClearStallEP} (USBD\_\-HandleTypeDef $\ast$pdev, uint8\_\-t ep\_\-addr)
+\begin{CompactList}\small\item\em Clears a Stall condition on an endpoint of the Low Level Driver. \item\end{CompactList}\item 
+uint8\_\-t \hyperlink{usbd__conf_8c_2a0f10f93cc4246272b63661051a64b7}{USBD\_\-LL\_\-IsStallEP} (USBD\_\-HandleTypeDef $\ast$pdev, uint8\_\-t ep\_\-addr)
+\begin{CompactList}\small\item\em Returns Stall condition. \item\end{CompactList}\item 
+USBD\_\-StatusTypeDef \hyperlink{usbd__conf_8c_d3674ea3c4a9c4bbe7c73192727f922f}{USBD\_\-LL\_\-SetUSBAddress} (USBD\_\-HandleTypeDef $\ast$pdev, uint8\_\-t dev\_\-addr)
+\begin{CompactList}\small\item\em Assigns a USB address to the device. \item\end{CompactList}\item 
+USBD\_\-StatusTypeDef \hyperlink{usbd__conf_8c_b87eb9f3d4d9f8956d2c6b77230f265c}{USBD\_\-LL\_\-Transmit} (USBD\_\-HandleTypeDef $\ast$pdev, uint8\_\-t ep\_\-addr, uint8\_\-t $\ast$pbuf, uint16\_\-t size)
+\begin{CompactList}\small\item\em Transmits data over an endpoint. \item\end{CompactList}\item 
+USBD\_\-StatusTypeDef \hyperlink{usbd__conf_8c_259b00707b333065b66be515dd019428}{USBD\_\-LL\_\-PrepareReceive} (USBD\_\-HandleTypeDef $\ast$pdev, uint8\_\-t ep\_\-addr, uint8\_\-t $\ast$pbuf, uint16\_\-t size)
+\begin{CompactList}\small\item\em Prepares an endpoint for reception. \item\end{CompactList}\item 
+uint32\_\-t \hyperlink{usbd__conf_8c_eb80f50482e04c046ba41f5ea58a1b2b}{USBD\_\-LL\_\-GetRxDataSize} (USBD\_\-HandleTypeDef $\ast$pdev, uint8\_\-t ep\_\-addr)
+\begin{CompactList}\small\item\em Returns the last transfered packet size. \item\end{CompactList}\item 
+void \hyperlink{usbd__conf_8c_383d9a41089cf426cdc61b5b24e2ca0a}{USBD\_\-LL\_\-Delay} (uint32\_\-t Delay)
+\begin{CompactList}\small\item\em Delays routine for the USB device library. \item\end{CompactList}\item 
+void $\ast$ \hyperlink{usbd__conf_8c_2df01b9aae6026e9f6b55da3b1e72aee}{USBD\_\-static\_\-malloc} (uint32\_\-t size)
+\begin{CompactList}\small\item\em Static single allocation. \item\end{CompactList}\item 
+void \hyperlink{usbd__conf_8c_92ed1214efe53f54b3586a6233cfa5a6}{USBD\_\-static\_\-free} (void $\ast$p)
+\begin{CompactList}\small\item\em Dummy memory free. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Переменные}
+\begin{CompactItemize}
+\item 
+\hypertarget{usbd__conf_8c_fabb8e1d05154a3b694f4f4d150b194f}{
+PCD\_\-HandleTypeDef \textbf{hpcd\_\-USB\_\-FS}}
+\label{usbd__conf_8c_fabb8e1d05154a3b694f4f4d150b194f}
+
+\end{CompactItemize}
+
+
+\subsection{Подробное описание}
+: This file implements the board support package for the USB device library 
+
+\begin{Desc}
+\item[Версия:]: v2.0\_\-Cube This notice applies to any and all portions of this file that are not between comment pairs USER CODE BEGIN and USER CODE END. Other portions of this file, whether inserted by the user or by software development tools are owned by their respective copyright owners.\end{Desc}
+Copyright (c) 2018 STMicroelectronics International N.V. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted, provided that the following conditions are met:
+
+1. Redistribution of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. 3. Neither the name of STMicroelectronics nor the names of other contributors to this software may be used to endorse or promote products derived from this software without specific written permission. 4. This software, including modifications and/or derivative works of this software, must execute solely and exclusively on microcontroller or microprocessor devices manufactured by or for STMicroelectronics. 5. Redistribution and use of this software other than as permitted under this license is void and will automatically terminate your rights under this license.
+
+THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS \char`\"{}AS IS\char`\"{} AND ANY EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY RIGHTS ARE DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. IN NO EVENT SHALL STMICROELECTRONICS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+
+\subsection{Функции}
+\hypertarget{usbd__conf_8c_829116a51f1db1a72ebd1120f60719d5}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!\_\-Error\_\-Handler@{\_\-Error\_\-Handler}}
+\index{\_\-Error\_\-Handler@{\_\-Error\_\-Handler}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{\_\-Error\_\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void \_\-Error\_\-Handler (char $\ast$ {\em file}, \/  int {\em line})}}
+\label{usbd__conf_8c_829116a51f1db1a72ebd1120f60719d5}
+
+
+This function is executed in case of error occurrence. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em file,:}]The file name as string. \item[{\em line,:}]The line in file as a number. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_0c449541523759cf62be9c9d47540c5d}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!HAL\_\-PCD\_\-ConnectCallback@{HAL\_\-PCD\_\-ConnectCallback}}
+\index{HAL\_\-PCD\_\-ConnectCallback@{HAL\_\-PCD\_\-ConnectCallback}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{HAL\_\-PCD\_\-ConnectCallback}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-PCD\_\-ConnectCallback (PCD\_\-HandleTypeDef $\ast$ {\em hpcd})}}
+\label{usbd__conf_8c_0c449541523759cf62be9c9d47540c5d}
+
+
+Connect callback. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em hpcd,:}]PCD handle \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_1679f5c50539a3dfca1391557e7a757b}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!HAL\_\-PCD\_\-DataInStageCallback@{HAL\_\-PCD\_\-DataInStageCallback}}
+\index{HAL\_\-PCD\_\-DataInStageCallback@{HAL\_\-PCD\_\-DataInStageCallback}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{HAL\_\-PCD\_\-DataInStageCallback}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-PCD\_\-DataInStageCallback (PCD\_\-HandleTypeDef $\ast$ {\em hpcd}, \/  uint8\_\-t {\em epnum})}}
+\label{usbd__conf_8c_1679f5c50539a3dfca1391557e7a757b}
+
+
+Data In stage callback. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em hpcd,:}]PCD handle \item[{\em epnum,:}]Endpoint number \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_2f1ac834d9677dcae7d8973828f81149}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!HAL\_\-PCD\_\-DataOutStageCallback@{HAL\_\-PCD\_\-DataOutStageCallback}}
+\index{HAL\_\-PCD\_\-DataOutStageCallback@{HAL\_\-PCD\_\-DataOutStageCallback}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{HAL\_\-PCD\_\-DataOutStageCallback}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-PCD\_\-DataOutStageCallback (PCD\_\-HandleTypeDef $\ast$ {\em hpcd}, \/  uint8\_\-t {\em epnum})}}
+\label{usbd__conf_8c_2f1ac834d9677dcae7d8973828f81149}
+
+
+Data Out stage callback. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em hpcd,:}]PCD handle \item[{\em epnum,:}]Endpoint number \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_25f930b5fe696224f8e71dacf5f324b4}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!HAL\_\-PCD\_\-DisconnectCallback@{HAL\_\-PCD\_\-DisconnectCallback}}
+\index{HAL\_\-PCD\_\-DisconnectCallback@{HAL\_\-PCD\_\-DisconnectCallback}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{HAL\_\-PCD\_\-DisconnectCallback}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-PCD\_\-DisconnectCallback (PCD\_\-HandleTypeDef $\ast$ {\em hpcd})}}
+\label{usbd__conf_8c_25f930b5fe696224f8e71dacf5f324b4}
+
+
+Disconnect callback. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em hpcd,:}]PCD handle \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_8f4041d553ef2fb326c6e483797f99a8}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!HAL\_\-PCD\_\-ISOINIncompleteCallback@{HAL\_\-PCD\_\-ISOINIncompleteCallback}}
+\index{HAL\_\-PCD\_\-ISOINIncompleteCallback@{HAL\_\-PCD\_\-ISOINIncompleteCallback}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{HAL\_\-PCD\_\-ISOINIncompleteCallback}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-PCD\_\-ISOINIncompleteCallback (PCD\_\-HandleTypeDef $\ast$ {\em hpcd}, \/  uint8\_\-t {\em epnum})}}
+\label{usbd__conf_8c_8f4041d553ef2fb326c6e483797f99a8}
+
+
+ISOINIncomplete callback. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em hpcd,:}]PCD handle \item[{\em epnum,:}]Endpoint number \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_4274f129d782f0a3c9a10b5bbe022cd4}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!HAL\_\-PCD\_\-ISOOUTIncompleteCallback@{HAL\_\-PCD\_\-ISOOUTIncompleteCallback}}
+\index{HAL\_\-PCD\_\-ISOOUTIncompleteCallback@{HAL\_\-PCD\_\-ISOOUTIncompleteCallback}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{HAL\_\-PCD\_\-ISOOUTIncompleteCallback}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-PCD\_\-ISOOUTIncompleteCallback (PCD\_\-HandleTypeDef $\ast$ {\em hpcd}, \/  uint8\_\-t {\em epnum})}}
+\label{usbd__conf_8c_4274f129d782f0a3c9a10b5bbe022cd4}
+
+
+ISOOUTIncomplete callback. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em hpcd,:}]PCD handle \item[{\em epnum,:}]Endpoint number \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_0a53f3c7c744fcfa7bdba6e9badc70d4}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!HAL\_\-PCD\_\-MspDeInit@{HAL\_\-PCD\_\-MspDeInit}}
+\index{HAL\_\-PCD\_\-MspDeInit@{HAL\_\-PCD\_\-MspDeInit}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{HAL\_\-PCD\_\-MspDeInit}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-PCD\_\-MspDeInit (PCD\_\-HandleTypeDef $\ast$ {\em pcdHandle})}}
+\label{usbd__conf_8c_0a53f3c7c744fcfa7bdba6e9badc70d4}
+
+
+
+
+USB GPIO Configuration PA11 ------$>$ USB\_\-DM PA12 ------$>$ USB\_\-DP\hypertarget{usbd__conf_8c_b88e6d72062dc5d478ab12b435695ccb}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!HAL\_\-PCD\_\-MspInit@{HAL\_\-PCD\_\-MspInit}}
+\index{HAL\_\-PCD\_\-MspInit@{HAL\_\-PCD\_\-MspInit}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{HAL\_\-PCD\_\-MspInit}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-PCD\_\-MspInit (PCD\_\-HandleTypeDef $\ast$ {\em pcdHandle})}}
+\label{usbd__conf_8c_b88e6d72062dc5d478ab12b435695ccb}
+
+
+
+
+USB GPIO Configuration PA11 ------$>$ USB\_\-DM PA12 ------$>$ USB\_\-DP\hypertarget{usbd__conf_8c_f4fbef977092aa525c6b1668ffbec77b}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!HAL\_\-PCD\_\-ResetCallback@{HAL\_\-PCD\_\-ResetCallback}}
+\index{HAL\_\-PCD\_\-ResetCallback@{HAL\_\-PCD\_\-ResetCallback}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{HAL\_\-PCD\_\-ResetCallback}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-PCD\_\-ResetCallback (PCD\_\-HandleTypeDef $\ast$ {\em hpcd})}}
+\label{usbd__conf_8c_f4fbef977092aa525c6b1668ffbec77b}
+
+
+Reset callback. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em hpcd,:}]PCD handle \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_0386a36b921cd51dd6e50103c3cd33b1}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!HAL\_\-PCD\_\-ResumeCallback@{HAL\_\-PCD\_\-ResumeCallback}}
+\index{HAL\_\-PCD\_\-ResumeCallback@{HAL\_\-PCD\_\-ResumeCallback}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{HAL\_\-PCD\_\-ResumeCallback}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-PCD\_\-ResumeCallback (PCD\_\-HandleTypeDef $\ast$ {\em hpcd})}}
+\label{usbd__conf_8c_0386a36b921cd51dd6e50103c3cd33b1}
+
+
+Resume callback. When Low power mode is enabled the debug cannot be used (IAR, Keil doesn't support it). 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em hpcd,:}]PCD handle \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_9d72aa4d3d984b164047b081d4566f6d}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!HAL\_\-PCD\_\-SetupStageCallback@{HAL\_\-PCD\_\-SetupStageCallback}}
+\index{HAL\_\-PCD\_\-SetupStageCallback@{HAL\_\-PCD\_\-SetupStageCallback}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{HAL\_\-PCD\_\-SetupStageCallback}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-PCD\_\-SetupStageCallback (PCD\_\-HandleTypeDef $\ast$ {\em hpcd})}}
+\label{usbd__conf_8c_9d72aa4d3d984b164047b081d4566f6d}
+
+
+Setup stage callback. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em hpcd,:}]PCD handle \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_85c99eeb4aa17d8ff5298efff92ac28e}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!HAL\_\-PCD\_\-SOFCallback@{HAL\_\-PCD\_\-SOFCallback}}
+\index{HAL\_\-PCD\_\-SOFCallback@{HAL\_\-PCD\_\-SOFCallback}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{HAL\_\-PCD\_\-SOFCallback}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-PCD\_\-SOFCallback (PCD\_\-HandleTypeDef $\ast$ {\em hpcd})}}
+\label{usbd__conf_8c_85c99eeb4aa17d8ff5298efff92ac28e}
+
+
+SOF callback. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em hpcd,:}]PCD handle \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_0e14acd4564979743bc0a89aa5f15428}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!HAL\_\-PCD\_\-SuspendCallback@{HAL\_\-PCD\_\-SuspendCallback}}
+\index{HAL\_\-PCD\_\-SuspendCallback@{HAL\_\-PCD\_\-SuspendCallback}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{HAL\_\-PCD\_\-SuspendCallback}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-PCD\_\-SuspendCallback (PCD\_\-HandleTypeDef $\ast$ {\em hpcd})}}
+\label{usbd__conf_8c_0e14acd4564979743bc0a89aa5f15428}
+
+
+Suspend callback. When Low power mode is enabled the debug cannot be used (IAR, Keil doesn't support it). 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em hpcd,:}]PCD handle \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_3d04e2831c0a46d0e6719c1a2caba5b1}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!HAL\_\-PCDEx\_\-SetConnectionState@{HAL\_\-PCDEx\_\-SetConnectionState}}
+\index{HAL\_\-PCDEx\_\-SetConnectionState@{HAL\_\-PCDEx\_\-SetConnectionState}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{HAL\_\-PCDEx\_\-SetConnectionState}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-PCDEx\_\-SetConnectionState (PCD\_\-HandleTypeDef $\ast$ {\em hpcd}, \/  uint8\_\-t {\em state})}}
+\label{usbd__conf_8c_3d04e2831c0a46d0e6719c1a2caba5b1}
+
+
+Software device connection. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em hpcd,:}]PCD handle \item[{\em state,:}]Connection state (0: disconnected / 1: connected) \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_d4fa6f2eeefe95d07148c6c53d111eae}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-LL\_\-ClearStallEP@{USBD\_\-LL\_\-ClearStallEP}}
+\index{USBD\_\-LL\_\-ClearStallEP@{USBD\_\-LL\_\-ClearStallEP}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-LL\_\-ClearStallEP}]{\setlength{\rightskip}{0pt plus 5cm}USBD\_\-StatusTypeDef USBD\_\-LL\_\-ClearStallEP (USBD\_\-HandleTypeDef $\ast$ {\em pdev}, \/  uint8\_\-t {\em ep\_\-addr})}}
+\label{usbd__conf_8c_d4fa6f2eeefe95d07148c6c53d111eae}
+
+
+Clears a Stall condition on an endpoint of the Low Level Driver. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em pdev,:}]Device handle \item[{\em ep\_\-addr,:}]Endpoint number \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em USBD}]status \end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_e12e7de3c398d5663976bf11faa63572}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-LL\_\-CloseEP@{USBD\_\-LL\_\-CloseEP}}
+\index{USBD\_\-LL\_\-CloseEP@{USBD\_\-LL\_\-CloseEP}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-LL\_\-CloseEP}]{\setlength{\rightskip}{0pt plus 5cm}USBD\_\-StatusTypeDef USBD\_\-LL\_\-CloseEP (USBD\_\-HandleTypeDef $\ast$ {\em pdev}, \/  uint8\_\-t {\em ep\_\-addr})}}
+\label{usbd__conf_8c_e12e7de3c398d5663976bf11faa63572}
+
+
+Closes an endpoint of the low level driver. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em pdev,:}]Device handle \item[{\em ep\_\-addr,:}]Endpoint number \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em USBD}]status \end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_ae9bfb6a27b11f232fc55a1d1b28be24}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-LL\_\-DeInit@{USBD\_\-LL\_\-DeInit}}
+\index{USBD\_\-LL\_\-DeInit@{USBD\_\-LL\_\-DeInit}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-LL\_\-DeInit}]{\setlength{\rightskip}{0pt plus 5cm}USBD\_\-StatusTypeDef USBD\_\-LL\_\-DeInit (USBD\_\-HandleTypeDef $\ast$ {\em pdev})}}
+\label{usbd__conf_8c_ae9bfb6a27b11f232fc55a1d1b28be24}
+
+
+De-Initializes the low level portion of the device driver. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em pdev,:}]Device handle \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em USBD}]status \end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_383d9a41089cf426cdc61b5b24e2ca0a}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-LL\_\-Delay@{USBD\_\-LL\_\-Delay}}
+\index{USBD\_\-LL\_\-Delay@{USBD\_\-LL\_\-Delay}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-LL\_\-Delay}]{\setlength{\rightskip}{0pt plus 5cm}void USBD\_\-LL\_\-Delay (uint32\_\-t {\em Delay})}}
+\label{usbd__conf_8c_383d9a41089cf426cdc61b5b24e2ca0a}
+
+
+Delays routine for the USB device library. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em Delay,:}]Delay in ms \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_10080ed9555110afba809de968314985}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-LL\_\-FlushEP@{USBD\_\-LL\_\-FlushEP}}
+\index{USBD\_\-LL\_\-FlushEP@{USBD\_\-LL\_\-FlushEP}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-LL\_\-FlushEP}]{\setlength{\rightskip}{0pt plus 5cm}USBD\_\-StatusTypeDef USBD\_\-LL\_\-FlushEP (USBD\_\-HandleTypeDef $\ast$ {\em pdev}, \/  uint8\_\-t {\em ep\_\-addr})}}
+\label{usbd__conf_8c_10080ed9555110afba809de968314985}
+
+
+Flushes an endpoint of the Low Level Driver. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em pdev,:}]Device handle \item[{\em ep\_\-addr,:}]Endpoint number \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em USBD}]status \end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_eb80f50482e04c046ba41f5ea58a1b2b}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-LL\_\-GetRxDataSize@{USBD\_\-LL\_\-GetRxDataSize}}
+\index{USBD\_\-LL\_\-GetRxDataSize@{USBD\_\-LL\_\-GetRxDataSize}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-LL\_\-GetRxDataSize}]{\setlength{\rightskip}{0pt plus 5cm}uint32\_\-t USBD\_\-LL\_\-GetRxDataSize (USBD\_\-HandleTypeDef $\ast$ {\em pdev}, \/  uint8\_\-t {\em ep\_\-addr})}}
+\label{usbd__conf_8c_eb80f50482e04c046ba41f5ea58a1b2b}
+
+
+Returns the last transfered packet size. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em pdev,:}]Device handle \item[{\em ep\_\-addr,:}]Endpoint number \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em Recived}]Data Size \end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_24b61e95db7e4c7ad30a835e8d905943}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-LL\_\-Init@{USBD\_\-LL\_\-Init}}
+\index{USBD\_\-LL\_\-Init@{USBD\_\-LL\_\-Init}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-LL\_\-Init}]{\setlength{\rightskip}{0pt plus 5cm}USBD\_\-StatusTypeDef USBD\_\-LL\_\-Init (USBD\_\-HandleTypeDef $\ast$ {\em pdev})}}
+\label{usbd__conf_8c_24b61e95db7e4c7ad30a835e8d905943}
+
+
+Initializes the low level portion of the device driver. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em pdev,:}]Device handle \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em USBD}]status \end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_2a0f10f93cc4246272b63661051a64b7}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-LL\_\-IsStallEP@{USBD\_\-LL\_\-IsStallEP}}
+\index{USBD\_\-LL\_\-IsStallEP@{USBD\_\-LL\_\-IsStallEP}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-LL\_\-IsStallEP}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t USBD\_\-LL\_\-IsStallEP (USBD\_\-HandleTypeDef $\ast$ {\em pdev}, \/  uint8\_\-t {\em ep\_\-addr})}}
+\label{usbd__conf_8c_2a0f10f93cc4246272b63661051a64b7}
+
+
+Returns Stall condition. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em pdev,:}]Device handle \item[{\em ep\_\-addr,:}]Endpoint number \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em Stall}](1: Yes, 0: No) \end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_d96254d74d95496ffb5f6f2248585cb0}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-LL\_\-OpenEP@{USBD\_\-LL\_\-OpenEP}}
+\index{USBD\_\-LL\_\-OpenEP@{USBD\_\-LL\_\-OpenEP}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-LL\_\-OpenEP}]{\setlength{\rightskip}{0pt plus 5cm}USBD\_\-StatusTypeDef USBD\_\-LL\_\-OpenEP (USBD\_\-HandleTypeDef $\ast$ {\em pdev}, \/  uint8\_\-t {\em ep\_\-addr}, \/  uint8\_\-t {\em ep\_\-type}, \/  uint16\_\-t {\em ep\_\-mps})}}
+\label{usbd__conf_8c_d96254d74d95496ffb5f6f2248585cb0}
+
+
+Opens an endpoint of the low level driver. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em pdev,:}]Device handle \item[{\em ep\_\-addr,:}]Endpoint number \item[{\em ep\_\-type,:}]Endpoint type \item[{\em ep\_\-mps,:}]Endpoint max packet size \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em USBD}]status \end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_259b00707b333065b66be515dd019428}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-LL\_\-PrepareReceive@{USBD\_\-LL\_\-PrepareReceive}}
+\index{USBD\_\-LL\_\-PrepareReceive@{USBD\_\-LL\_\-PrepareReceive}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-LL\_\-PrepareReceive}]{\setlength{\rightskip}{0pt plus 5cm}USBD\_\-StatusTypeDef USBD\_\-LL\_\-PrepareReceive (USBD\_\-HandleTypeDef $\ast$ {\em pdev}, \/  uint8\_\-t {\em ep\_\-addr}, \/  uint8\_\-t $\ast$ {\em pbuf}, \/  uint16\_\-t {\em size})}}
+\label{usbd__conf_8c_259b00707b333065b66be515dd019428}
+
+
+Prepares an endpoint for reception. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em pdev,:}]Device handle \item[{\em ep\_\-addr,:}]Endpoint number \item[{\em pbuf,:}]Pointer to data to be received \item[{\em size,:}]Data size \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em USBD}]status \end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_d3674ea3c4a9c4bbe7c73192727f922f}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-LL\_\-SetUSBAddress@{USBD\_\-LL\_\-SetUSBAddress}}
+\index{USBD\_\-LL\_\-SetUSBAddress@{USBD\_\-LL\_\-SetUSBAddress}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-LL\_\-SetUSBAddress}]{\setlength{\rightskip}{0pt plus 5cm}USBD\_\-StatusTypeDef USBD\_\-LL\_\-SetUSBAddress (USBD\_\-HandleTypeDef $\ast$ {\em pdev}, \/  uint8\_\-t {\em dev\_\-addr})}}
+\label{usbd__conf_8c_d3674ea3c4a9c4bbe7c73192727f922f}
+
+
+Assigns a USB address to the device. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em pdev,:}]Device handle \item[{\em dev\_\-addr,:}]Device address \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em USBD}]status \end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_bc2b4a7c8307e04955b015fd32057ec7}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-LL\_\-StallEP@{USBD\_\-LL\_\-StallEP}}
+\index{USBD\_\-LL\_\-StallEP@{USBD\_\-LL\_\-StallEP}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-LL\_\-StallEP}]{\setlength{\rightskip}{0pt plus 5cm}USBD\_\-StatusTypeDef USBD\_\-LL\_\-StallEP (USBD\_\-HandleTypeDef $\ast$ {\em pdev}, \/  uint8\_\-t {\em ep\_\-addr})}}
+\label{usbd__conf_8c_bc2b4a7c8307e04955b015fd32057ec7}
+
+
+Sets a Stall condition on an endpoint of the Low Level Driver. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em pdev,:}]Device handle \item[{\em ep\_\-addr,:}]Endpoint number \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em USBD}]status \end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_43e53e424e9850d8261e1f9a1be53348}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-LL\_\-Start@{USBD\_\-LL\_\-Start}}
+\index{USBD\_\-LL\_\-Start@{USBD\_\-LL\_\-Start}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-LL\_\-Start}]{\setlength{\rightskip}{0pt plus 5cm}USBD\_\-StatusTypeDef USBD\_\-LL\_\-Start (USBD\_\-HandleTypeDef $\ast$ {\em pdev})}}
+\label{usbd__conf_8c_43e53e424e9850d8261e1f9a1be53348}
+
+
+Starts the low level portion of the device driver. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em pdev,:}]Device handle \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em USBD}]status \end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_c522b28139c1868a2e24d044fc8288fd}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-LL\_\-Stop@{USBD\_\-LL\_\-Stop}}
+\index{USBD\_\-LL\_\-Stop@{USBD\_\-LL\_\-Stop}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-LL\_\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}USBD\_\-StatusTypeDef USBD\_\-LL\_\-Stop (USBD\_\-HandleTypeDef $\ast$ {\em pdev})}}
+\label{usbd__conf_8c_c522b28139c1868a2e24d044fc8288fd}
+
+
+Stops the low level portion of the device driver. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em pdev,:}]Device handle \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em USBD}]status \end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_b87eb9f3d4d9f8956d2c6b77230f265c}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-LL\_\-Transmit@{USBD\_\-LL\_\-Transmit}}
+\index{USBD\_\-LL\_\-Transmit@{USBD\_\-LL\_\-Transmit}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-LL\_\-Transmit}]{\setlength{\rightskip}{0pt plus 5cm}USBD\_\-StatusTypeDef USBD\_\-LL\_\-Transmit (USBD\_\-HandleTypeDef $\ast$ {\em pdev}, \/  uint8\_\-t {\em ep\_\-addr}, \/  uint8\_\-t $\ast$ {\em pbuf}, \/  uint16\_\-t {\em size})}}
+\label{usbd__conf_8c_b87eb9f3d4d9f8956d2c6b77230f265c}
+
+
+Transmits data over an endpoint. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em pdev,:}]Device handle \item[{\em ep\_\-addr,:}]Endpoint number \item[{\em pbuf,:}]Pointer to data to be sent \item[{\em size,:}]Data size \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em USBD}]status \end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_92ed1214efe53f54b3586a6233cfa5a6}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-static\_\-free@{USBD\_\-static\_\-free}}
+\index{USBD\_\-static\_\-free@{USBD\_\-static\_\-free}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-static\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void USBD\_\-static\_\-free (void $\ast$ {\em p})}}
+\label{usbd__conf_8c_92ed1214efe53f54b3586a6233cfa5a6}
+
+
+Dummy memory free. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em p,:}]Pointer to allocated memory address \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{usbd__conf_8c_2df01b9aae6026e9f6b55da3b1e72aee}{
+\index{usbd\_\-conf.c@{usbd\_\-conf.c}!USBD\_\-static\_\-malloc@{USBD\_\-static\_\-malloc}}
+\index{USBD\_\-static\_\-malloc@{USBD\_\-static\_\-malloc}!usbd_conf.c@{usbd\_\-conf.c}}
+\subsubsection[{USBD\_\-static\_\-malloc}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ USBD\_\-static\_\-malloc (uint32\_\-t {\em size})}}
+\label{usbd__conf_8c_2df01b9aae6026e9f6b55da3b1e72aee}
+
+
+Static single allocation. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em size,:}]Size of allocated memory \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}

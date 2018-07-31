@@ -1,0 +1,86 @@
+\hypertarget{group___u_s_b_d___c_d_c___i_f}{
+\section{USBD\_\-CDC\_\-IF}
+\label{group___u_s_b_d___c_d_c___i_f}\index{USBD\_\-CDC\_\-IF@{USBD\_\-CDC\_\-IF}}
+}
+\subsection*{Группы}
+\begin{CompactItemize}
+\item 
+\hyperlink{group___u_s_b_d___c_d_c___i_f___private___types_definitions}{USBD\_\-CDC\_\-IF\_\-Private\_\-TypesDefinitions}
+\begin{CompactList}\small\item\em Private types. \item\end{CompactList}
+
+\item 
+\hyperlink{group___u_s_b_d___c_d_c___i_f___private___defines}{USBD\_\-CDC\_\-IF\_\-Private\_\-Defines}
+\begin{CompactList}\small\item\em Private defines. \item\end{CompactList}
+
+\item 
+\hyperlink{group___u_s_b_d___c_d_c___i_f___private___macros}{USBD\_\-CDC\_\-IF\_\-Private\_\-Macros}
+\begin{CompactList}\small\item\em Private macros. \item\end{CompactList}
+
+\item 
+\hyperlink{group___u_s_b_d___c_d_c___i_f___private___variables}{USBD\_\-CDC\_\-IF\_\-Private\_\-Variables}
+\begin{CompactList}\small\item\em Private variables. \item\end{CompactList}
+
+\item 
+\hyperlink{group___u_s_b_d___c_d_c___i_f___exported___variables}{USBD\_\-CDC\_\-IF\_\-Exported\_\-Variables}
+\begin{CompactList}\small\item\em Public variables. \item\end{CompactList}
+
+\item 
+\hyperlink{group___u_s_b_d___c_d_c___i_f___private___function_prototypes}{USBD\_\-CDC\_\-IF\_\-Private\_\-FunctionPrototypes}
+\begin{CompactList}\small\item\em Private functions declaration. \item\end{CompactList}
+
+\end{CompactItemize}
+\subsection*{Функции}
+\begin{CompactItemize}
+\item 
+uint8\_\-t \hyperlink{group___u_s_b_d___c_d_c___i_f_g5137d6201dbdef2bf351c5b4941c24f4}{CDC\_\-Transmit\_\-FS} (uint8\_\-t $\ast$Buf, uint16\_\-t Len)
+\begin{CompactList}\small\item\em CDC\_\-Transmit\_\-FS Data to send over USB IN endpoint are sent over CDC interface through this function. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Переменные}
+\begin{CompactItemize}
+\item 
+USBD\_\-CDC\_\-ItfTypeDef \textbf{USBD\_\-Interface\_\-fops\_\-FS}
+\end{CompactItemize}
+
+
+\subsection{Функции}
+\hypertarget{group___u_s_b_d___c_d_c___i_f_g5137d6201dbdef2bf351c5b4941c24f4}{
+\index{USBD\_\-CDC\_\-IF@{USBD\_\-CDC\_\-IF}!CDC\_\-Transmit\_\-FS@{CDC\_\-Transmit\_\-FS}}
+\index{CDC\_\-Transmit\_\-FS@{CDC\_\-Transmit\_\-FS}!USBD_CDC_IF@{USBD\_\-CDC\_\-IF}}
+\subsubsection[{CDC\_\-Transmit\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t CDC\_\-Transmit\_\-FS (uint8\_\-t $\ast$ {\em Buf}, \/  uint16\_\-t {\em Len})}}
+\label{group___u_s_b_d___c_d_c___i_f_g5137d6201dbdef2bf351c5b4941c24f4}
+
+
+CDC\_\-Transmit\_\-FS Data to send over USB IN endpoint are sent over CDC interface through this function. 
+
+\begin{Desc}
+\item[Заметки:]\end{Desc}
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em Buf,:}]Buffer of data to be sent \item[{\em Len,:}]Number of data to be sent (in bytes) \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em USBD\_\-OK}]if all operations are OK else USBD\_\-FAIL or USBD\_\-BUSY \end{description}
+\end{Desc}
+
+
+\subsection{Переменные}
+\hypertarget{group___u_s_b_d___c_d_c___i_f_g99394ed19b774f171df96c2848c411ed}{
+\index{USBD\_\-CDC\_\-IF@{USBD\_\-CDC\_\-IF}!USBD\_\-Interface\_\-fops\_\-FS@{USBD\_\-Interface\_\-fops\_\-FS}}
+\index{USBD\_\-Interface\_\-fops\_\-FS@{USBD\_\-Interface\_\-fops\_\-FS}!USBD_CDC_IF@{USBD\_\-CDC\_\-IF}}
+\subsubsection[{USBD\_\-Interface\_\-fops\_\-FS}]{\setlength{\rightskip}{0pt plus 5cm}USBD\_\-CDC\_\-ItfTypeDef USBD\_\-Interface\_\-fops\_\-FS}}
+\label{group___u_s_b_d___c_d_c___i_f_g99394ed19b774f171df96c2848c411ed}
+
+
+\textbf{Инициализатор}
+
+\begin{Code}\begin{verbatim}
+{
+  CDC_Init_FS,
+  CDC_DeInit_FS,
+  CDC_Control_FS,
+  CDC_Receive_FS
+}
+\end{verbatim}
+\end{Code}

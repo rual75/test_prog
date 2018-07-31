@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>test_prog: STM32F3xx_System_Private_Functions</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Создано системой Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="modules.html"><span>Группы</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>STM32F3xx_System_Private_Functions<br>
+<small>
+[<a class="el" href="group__stm32f3xx__system.html">Stm32f3xx_system</a>]</small>
+</h1><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Функции</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_m32_f3xx___system___private___functions.html#g93f514700ccf00d08dbdcff7f1224eb2">SystemInit</a> (void)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setup the microcontroller system Initialize the FPU setting, vector table location and the PLL configuration is reset.  <a href="#g93f514700ccf00d08dbdcff7f1224eb2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_m32_f3xx___system___private___functions.html#ge0c36a9591fe6e9c45ecb21a794f0f0f">SystemCoreClockUpdate</a> (void)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Update SystemCoreClock variable according to Clock Register Values. The SystemCoreClock variable contains the core clock (HCLK), it can be used by the user application to setup the SysTick timer or configure other parameters.  <a href="#ge0c36a9591fe6e9c45ecb21a794f0f0f"></a><br></td></tr>
+</table>
+<hr><h2>Функции</h2>
+<a class="anchor" name="ge0c36a9591fe6e9c45ecb21a794f0f0f"></a><!-- doxytag: member="system_stm32f3xx.c::SystemCoreClockUpdate" ref="ge0c36a9591fe6e9c45ecb21a794f0f0f" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SystemCoreClockUpdate           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Update SystemCoreClock variable according to Clock Register Values. The SystemCoreClock variable contains the core clock (HCLK), it can be used by the user application to setup the SysTick timer or configure other parameters. 
+<p>
+<dl class="note" compact><dt><b>Заметки:</b></dt><dd>Each time the core clock (HCLK) changes, this function must be called to update SystemCoreClock variable value. Otherwise, any configuration based on this variable will be incorrect.<p>
+- The system frequency computed by this function is not the real frequency in the chip. It is calculated based on the predefined constant and the selected clock source:</dd></dl>
+<ul>
+<li>If SYSCLK source is HSI, SystemCoreClock will contain the <a class="el" href="group___s_t_m32_f3xx___system___private___defines.html#gaa8c76e274d0f6dd2cefb5d0b17fbc37">HSI_VALUE(*)</a></li></ul>
+<p>
+<ul>
+<li>If SYSCLK source is HSE, SystemCoreClock will contain the <a class="el" href="group___s_t_m32_f3xx___system___private___defines.html#geafcff4f57440c60e64812dddd13e7cb">HSE_VALUE(**)</a></li></ul>
+<p>
+<ul>
+<li>If SYSCLK source is PLL, SystemCoreClock will contain the <a class="el" href="group___s_t_m32_f3xx___system___private___defines.html#geafcff4f57440c60e64812dddd13e7cb">HSE_VALUE(**)</a> or <a class="el" href="group___s_t_m32_f3xx___system___private___defines.html#gaa8c76e274d0f6dd2cefb5d0b17fbc37">HSI_VALUE(*)</a> multiplied/divided by the PLL factors.</li></ul>
+<p>
+(*) HSI_VALUE is a constant defined in stm32f3xx_hal.h file (default value 8 MHz) but the real value may vary depending on the variations in voltage and temperature.<p>
+(**) HSE_VALUE is a constant defined in stm32f3xx_hal.h file (default value 8 MHz), user has to ensure that HSE_VALUE is same as the real frequency of the crystal used. Otherwise, this function may have wrong result.<p>
+<ul>
+<li>The result of this function could be not correct when using fractional value for HSE crystal.</li></ul>
+<p>
+<dl compact><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>None</em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Возвращаемые значения:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>None</em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="g93f514700ccf00d08dbdcff7f1224eb2"></a><!-- doxytag: member="system_stm32f3xx.c::SystemInit" ref="g93f514700ccf00d08dbdcff7f1224eb2" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SystemInit           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Setup the microcontroller system Initialize the FPU setting, vector table location and the PLL configuration is reset. 
+<p>
+<dl compact><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>None</em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Возвращаемые значения:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>None</em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Документация по test_prog. Последние изменения: Mon Jul 30 23:19:59 2018. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

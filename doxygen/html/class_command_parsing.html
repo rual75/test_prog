@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>test_prog: Класс CommandParsing</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Создано системой Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="modules.html"><span>Группы</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="functions.html"><span>Члены&nbsp;классов</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Класс CommandParsing</h1><!-- doxytag: class="CommandParsing" -->
+<p>
+<a href="class_command_parsing-members.html">Полный список членов класса</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Открытые типы</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_parsing.html#614d78523d2c549667f60ebbb7c8cf0a">enCmd_t</a> { <br>
+&nbsp;&nbsp;<b>CMD_NULL</b>, 
+<b>CMD_VOLTAGE</b>, 
+<b>CMD_LED_ON</b>, 
+<b>CMD_LED_OFF</b>, 
+<br>
+&nbsp;&nbsp;<b>CMD_RATE</b>
+<br>
+ }</td></tr>
+
+<tr><td colspan="2"><br><h2>Открытые члены</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_parsing.html#4917d73a32e1c34993a701ada45cdeb1">CommandParsing</a> (void)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="class_command_parsing.html#614d78523d2c549667f60ebbb7c8cf0a">enCmd_t</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_command_parsing.html#2d2e902f2065cd35f683976575e8dddb">GetCommand</a> (std::string key)</td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Подробное описание</h2>
+команды <dl compact><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>char*</em>&nbsp;</td><td>rx_message стандартная строка, содержащая команду </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Возвращает:</b></dt><dd>одно из значений enCmd_t, соответсвующая команде, либо, если команда не распознана - CMD_NULL </dd></dl>
+<hr><h2>Перечисления</h2>
+<a class="anchor" name="614d78523d2c549667f60ebbb7c8cf0a"></a><!-- doxytag: member="CommandParsing::enCmd_t" ref="614d78523d2c549667f60ebbb7c8cf0a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_command_parsing.html#614d78523d2c549667f60ebbb7c8cf0a">CommandParsing::enCmd_t</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+значение команды 
+</div>
+</div><p>
+<hr><h2>Конструктор(ы)</h2>
+<a class="anchor" name="4917d73a32e1c34993a701ada45cdeb1"></a><!-- doxytag: member="CommandParsing::CommandParsing" ref="4917d73a32e1c34993a701ada45cdeb1" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CommandParsing::CommandParsing           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+конструктор - заполняет ключи и значения команд 
+</div>
+</div><p>
+<hr><h2>Методы</h2>
+<a class="anchor" name="2d2e902f2065cd35f683976575e8dddb"></a><!-- doxytag: member="CommandParsing::GetCommand" ref="2d2e902f2065cd35f683976575e8dddb" args="(std::string key)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_command_parsing.html#614d78523d2c549667f60ebbb7c8cf0a">enCmd_t</a> CommandParsing::GetCommand           </td>
+          <td>(</td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>key</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+метод выполняющий распознование команды в строке <dl compact><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td>key - строка с ключом-строкой </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Возвращает:</b></dt><dd>возращает значение команды, если распознана, CMD_NULL - если нет. </dd></dl>
+
+</div>
+</div><p>
+<hr>Объявления и описания членов класса находятся в файле:<ul>
+<li>D:/Project/Cortex/test_prog/Src/<a class="el" href="application_8hpp-source.html">application.hpp</a></ul>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Документация по test_prog. Последние изменения: Mon Jul 30 23:19:59 2018. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

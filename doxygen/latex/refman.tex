@@ -1,0 +1,99 @@
+\documentclass[a4paper]{book}
+\usepackage{a4wide}
+\usepackage{makeidx}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{alltt}
+\usepackage{times}
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\else
+\usepackage[ps2pdf,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\usepackage{pspicture}
+\fi
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+
+\usepackage{doxygen}
+\makeindex
+\setcounter{tocdepth}{3}
+\renewcommand{\footrulewidth}{0.4pt}
+\begin{document}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}
+{\Large test\_\-prog \\[1ex]\large 1.0 }\\
+\vspace*{1cm}
+{\large Создано системой Doxygen 1.5.8}\\
+\vspace*{0.5cm}
+{\small Mon Jul 30 23:19:59 2018}\\
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+\pagenumbering{roman}
+\tableofcontents
+\clearemptydoublepage
+\pagenumbering{arabic}
+\chapter{Алфавитный указатель групп}
+\input{modules}
+\chapter{Алфавитный указатель классов}
+\input{annotated}
+\chapter{Список файлов}
+\input{files}
+\chapter{Группы}
+\input{group___u_s_b_d___c_d_c___i_f___private___types_definitions}
+\include{group___u_s_b_d___c_d_c___i_f___private___defines}
+\include{group___u_s_b_d___c_d_c___i_f___private___macros}
+\include{group___u_s_b_d___c_d_c___i_f___private___variables}
+\include{group___u_s_b_d___c_d_c___i_f___exported___variables}
+\include{group___u_s_b_d___c_d_c___i_f___private___function_prototypes}
+\include{group___u_s_b_d___d_e_s_c___private___types_definitions}
+\include{group___u_s_b_d___d_e_s_c___private___defines}
+\include{group___u_s_b_d___d_e_s_c___private___macros}
+\include{group___u_s_b_d___d_e_s_c___private___function_prototypes}
+\include{group___u_s_b_d___d_e_s_c___private___variables}
+\include{group___u_s_b_d___d_e_s_c___private___functions}
+\include{group___s_t_m32_f7xx___h_a_l___examples}
+\include{group___h_a_l___time_base}
+\include{group___c_m_s_i_s}
+\include{group__stm32f3xx__system}
+\include{group___s_t_m32_f3xx___system___private___includes}
+\include{group___s_t_m32_f3xx___system___private___types_definitions}
+\include{group___s_t_m32_f3xx___system___private___defines}
+\include{group___s_t_m32_f3xx___system___private___macros}
+\include{group___s_t_m32_f3xx___system___private___variables}
+\include{group___s_t_m32_f3xx___system___private___function_prototypes}
+\include{group___s_t_m32_f3xx___system___private___functions}
+\include{group___s_t_m32___u_s_b___o_t_g___d_e_v_i_c_e___l_i_b_r_a_r_y}
+\include{group___u_s_b_d___c_d_c___i_f}
+\include{group___u_s_b_d___d_e_s_c}
+\chapter{Классы}
+\input{class_command_parsing}
+\chapter{Файлы}
+\input{application_8cpp}
+\include{application_8hpp}
+\include{main_8c}
+\include{stm32f3xx__hal__timebase___t_i_m_8c}
+\include{stm32f3xx__it_8c}
+\include{system__stm32f3xx_8c}
+\include{usb__device_8c}
+\include{usbd__cdc__if_8c}
+\include{usbd__conf_8c}
+\include{usbd__desc_8c}
+\printindex
+\end{document}

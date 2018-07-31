@@ -1,0 +1,163 @@
+\hypertarget{group___u_s_b_d___d_e_s_c___private___functions}{
+\section{USBD\_\-DESC\_\-Private\_\-Functions}
+\label{group___u_s_b_d___d_e_s_c___private___functions}\index{USBD\_\-DESC\_\-Private\_\-Functions@{USBD\_\-DESC\_\-Private\_\-Functions}}
+}
+Private functions.  
+
+
+\subsection*{Функции}
+\begin{CompactItemize}
+\item 
+uint8\_\-t $\ast$ \hyperlink{group___u_s_b_d___d_e_s_c___private___functions_g14798be38c08a37163e53167032485ff}{USBD\_\-FS\_\-DeviceDescriptor} (USBD\_\-SpeedTypeDef speed, uint16\_\-t $\ast$length)
+\begin{CompactList}\small\item\em Return the device descriptor. \item\end{CompactList}\item 
+uint8\_\-t $\ast$ \hyperlink{group___u_s_b_d___d_e_s_c___private___functions_gc02628ceb6a6a071e192dcb85063c0cc}{USBD\_\-FS\_\-LangIDStrDescriptor} (USBD\_\-SpeedTypeDef speed, uint16\_\-t $\ast$length)
+\begin{CompactList}\small\item\em Return the LangID string descriptor. \item\end{CompactList}\item 
+uint8\_\-t $\ast$ \hyperlink{group___u_s_b_d___d_e_s_c___private___functions_g0ec558c0303daabb851d584109a56514}{USBD\_\-FS\_\-ProductStrDescriptor} (USBD\_\-SpeedTypeDef speed, uint16\_\-t $\ast$length)
+\begin{CompactList}\small\item\em Return the product string descriptor. \item\end{CompactList}\item 
+uint8\_\-t $\ast$ \hyperlink{group___u_s_b_d___d_e_s_c___private___functions_g6427a671827813efe1a46c3dfcb05683}{USBD\_\-FS\_\-ManufacturerStrDescriptor} (USBD\_\-SpeedTypeDef speed, uint16\_\-t $\ast$length)
+\begin{CompactList}\small\item\em Return the manufacturer string descriptor. \item\end{CompactList}\item 
+uint8\_\-t $\ast$ \hyperlink{group___u_s_b_d___d_e_s_c___private___functions_gad2a1d1451821845eda602a82b1cd213}{USBD\_\-FS\_\-SerialStrDescriptor} (USBD\_\-SpeedTypeDef speed, uint16\_\-t $\ast$length)
+\begin{CompactList}\small\item\em Return the serial number string descriptor. \item\end{CompactList}\item 
+uint8\_\-t $\ast$ \hyperlink{group___u_s_b_d___d_e_s_c___private___functions_g40ed2a0fb60c50a285983a09ba6921d6}{USBD\_\-FS\_\-ConfigStrDescriptor} (USBD\_\-SpeedTypeDef speed, uint16\_\-t $\ast$length)
+\begin{CompactList}\small\item\em Return the configuration string descriptor. \item\end{CompactList}\item 
+uint8\_\-t $\ast$ \hyperlink{group___u_s_b_d___d_e_s_c___private___functions_gb248f43276f92d982ab5853111e4fb10}{USBD\_\-FS\_\-InterfaceStrDescriptor} (USBD\_\-SpeedTypeDef speed, uint16\_\-t $\ast$length)
+\begin{CompactList}\small\item\em Return the interface string descriptor. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Подробное описание}
+Private functions. 
+
+\subsection{Функции}
+\hypertarget{group___u_s_b_d___d_e_s_c___private___functions_g40ed2a0fb60c50a285983a09ba6921d6}{
+\index{USBD\_\-DESC\_\-Private\_\-Functions@{USBD\_\-DESC\_\-Private\_\-Functions}!USBD\_\-FS\_\-ConfigStrDescriptor@{USBD\_\-FS\_\-ConfigStrDescriptor}}
+\index{USBD\_\-FS\_\-ConfigStrDescriptor@{USBD\_\-FS\_\-ConfigStrDescriptor}!USBD_DESC_Private_Functions@{USBD\_\-DESC\_\-Private\_\-Functions}}
+\subsubsection[{USBD\_\-FS\_\-ConfigStrDescriptor}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t $\ast$ USBD\_\-FS\_\-ConfigStrDescriptor (USBD\_\-SpeedTypeDef {\em speed}, \/  uint16\_\-t $\ast$ {\em length})}}
+\label{group___u_s_b_d___d_e_s_c___private___functions_g40ed2a0fb60c50a285983a09ba6921d6}
+
+
+Return the configuration string descriptor. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em speed}]: Current device speed \item[{\em length}]: Pointer to data length variable \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em Pointer}]to descriptor buffer \end{description}
+\end{Desc}
+\hypertarget{group___u_s_b_d___d_e_s_c___private___functions_g14798be38c08a37163e53167032485ff}{
+\index{USBD\_\-DESC\_\-Private\_\-Functions@{USBD\_\-DESC\_\-Private\_\-Functions}!USBD\_\-FS\_\-DeviceDescriptor@{USBD\_\-FS\_\-DeviceDescriptor}}
+\index{USBD\_\-FS\_\-DeviceDescriptor@{USBD\_\-FS\_\-DeviceDescriptor}!USBD_DESC_Private_Functions@{USBD\_\-DESC\_\-Private\_\-Functions}}
+\subsubsection[{USBD\_\-FS\_\-DeviceDescriptor}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t $\ast$ USBD\_\-FS\_\-DeviceDescriptor (USBD\_\-SpeedTypeDef {\em speed}, \/  uint16\_\-t $\ast$ {\em length})}}
+\label{group___u_s_b_d___d_e_s_c___private___functions_g14798be38c08a37163e53167032485ff}
+
+
+Return the device descriptor. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em speed}]: Current device speed \item[{\em length}]: Pointer to data length variable \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em Pointer}]to descriptor buffer \end{description}
+\end{Desc}
+\hypertarget{group___u_s_b_d___d_e_s_c___private___functions_gb248f43276f92d982ab5853111e4fb10}{
+\index{USBD\_\-DESC\_\-Private\_\-Functions@{USBD\_\-DESC\_\-Private\_\-Functions}!USBD\_\-FS\_\-InterfaceStrDescriptor@{USBD\_\-FS\_\-InterfaceStrDescriptor}}
+\index{USBD\_\-FS\_\-InterfaceStrDescriptor@{USBD\_\-FS\_\-InterfaceStrDescriptor}!USBD_DESC_Private_Functions@{USBD\_\-DESC\_\-Private\_\-Functions}}
+\subsubsection[{USBD\_\-FS\_\-InterfaceStrDescriptor}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t $\ast$ USBD\_\-FS\_\-InterfaceStrDescriptor (USBD\_\-SpeedTypeDef {\em speed}, \/  uint16\_\-t $\ast$ {\em length})}}
+\label{group___u_s_b_d___d_e_s_c___private___functions_gb248f43276f92d982ab5853111e4fb10}
+
+
+Return the interface string descriptor. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em speed}]: Current device speed \item[{\em length}]: Pointer to data length variable \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em Pointer}]to descriptor buffer \end{description}
+\end{Desc}
+\hypertarget{group___u_s_b_d___d_e_s_c___private___functions_gc02628ceb6a6a071e192dcb85063c0cc}{
+\index{USBD\_\-DESC\_\-Private\_\-Functions@{USBD\_\-DESC\_\-Private\_\-Functions}!USBD\_\-FS\_\-LangIDStrDescriptor@{USBD\_\-FS\_\-LangIDStrDescriptor}}
+\index{USBD\_\-FS\_\-LangIDStrDescriptor@{USBD\_\-FS\_\-LangIDStrDescriptor}!USBD_DESC_Private_Functions@{USBD\_\-DESC\_\-Private\_\-Functions}}
+\subsubsection[{USBD\_\-FS\_\-LangIDStrDescriptor}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t $\ast$ USBD\_\-FS\_\-LangIDStrDescriptor (USBD\_\-SpeedTypeDef {\em speed}, \/  uint16\_\-t $\ast$ {\em length})}}
+\label{group___u_s_b_d___d_e_s_c___private___functions_gc02628ceb6a6a071e192dcb85063c0cc}
+
+
+Return the LangID string descriptor. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em speed}]: Current device speed \item[{\em length}]: Pointer to data length variable \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em Pointer}]to descriptor buffer \end{description}
+\end{Desc}
+\hypertarget{group___u_s_b_d___d_e_s_c___private___functions_g6427a671827813efe1a46c3dfcb05683}{
+\index{USBD\_\-DESC\_\-Private\_\-Functions@{USBD\_\-DESC\_\-Private\_\-Functions}!USBD\_\-FS\_\-ManufacturerStrDescriptor@{USBD\_\-FS\_\-ManufacturerStrDescriptor}}
+\index{USBD\_\-FS\_\-ManufacturerStrDescriptor@{USBD\_\-FS\_\-ManufacturerStrDescriptor}!USBD_DESC_Private_Functions@{USBD\_\-DESC\_\-Private\_\-Functions}}
+\subsubsection[{USBD\_\-FS\_\-ManufacturerStrDescriptor}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t $\ast$ USBD\_\-FS\_\-ManufacturerStrDescriptor (USBD\_\-SpeedTypeDef {\em speed}, \/  uint16\_\-t $\ast$ {\em length})}}
+\label{group___u_s_b_d___d_e_s_c___private___functions_g6427a671827813efe1a46c3dfcb05683}
+
+
+Return the manufacturer string descriptor. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em speed}]: Current device speed \item[{\em length}]: Pointer to data length variable \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em Pointer}]to descriptor buffer \end{description}
+\end{Desc}
+\hypertarget{group___u_s_b_d___d_e_s_c___private___functions_g0ec558c0303daabb851d584109a56514}{
+\index{USBD\_\-DESC\_\-Private\_\-Functions@{USBD\_\-DESC\_\-Private\_\-Functions}!USBD\_\-FS\_\-ProductStrDescriptor@{USBD\_\-FS\_\-ProductStrDescriptor}}
+\index{USBD\_\-FS\_\-ProductStrDescriptor@{USBD\_\-FS\_\-ProductStrDescriptor}!USBD_DESC_Private_Functions@{USBD\_\-DESC\_\-Private\_\-Functions}}
+\subsubsection[{USBD\_\-FS\_\-ProductStrDescriptor}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t $\ast$ USBD\_\-FS\_\-ProductStrDescriptor (USBD\_\-SpeedTypeDef {\em speed}, \/  uint16\_\-t $\ast$ {\em length})}}
+\label{group___u_s_b_d___d_e_s_c___private___functions_g0ec558c0303daabb851d584109a56514}
+
+
+Return the product string descriptor. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em speed}]: Current device speed \item[{\em length}]: Pointer to data length variable \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em Pointer}]to descriptor buffer \end{description}
+\end{Desc}
+\hypertarget{group___u_s_b_d___d_e_s_c___private___functions_gad2a1d1451821845eda602a82b1cd213}{
+\index{USBD\_\-DESC\_\-Private\_\-Functions@{USBD\_\-DESC\_\-Private\_\-Functions}!USBD\_\-FS\_\-SerialStrDescriptor@{USBD\_\-FS\_\-SerialStrDescriptor}}
+\index{USBD\_\-FS\_\-SerialStrDescriptor@{USBD\_\-FS\_\-SerialStrDescriptor}!USBD_DESC_Private_Functions@{USBD\_\-DESC\_\-Private\_\-Functions}}
+\subsubsection[{USBD\_\-FS\_\-SerialStrDescriptor}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t $\ast$ USBD\_\-FS\_\-SerialStrDescriptor (USBD\_\-SpeedTypeDef {\em speed}, \/  uint16\_\-t $\ast$ {\em length})}}
+\label{group___u_s_b_d___d_e_s_c___private___functions_gad2a1d1451821845eda602a82b1cd213}
+
+
+Return the serial number string descriptor. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em speed}]: Current device speed \item[{\em length}]: Pointer to data length variable \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em Pointer}]to descriptor buffer \end{description}
+\end{Desc}

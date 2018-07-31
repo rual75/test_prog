@@ -1,0 +1,92 @@
+\hypertarget{group___h_a_l___time_base}{
+\section{HAL\_\-TimeBase}
+\label{group___h_a_l___time_base}\index{HAL\_\-TimeBase@{HAL\_\-TimeBase}}
+}
+\subsection*{Функции}
+\begin{CompactItemize}
+\item 
+HAL\_\-StatusTypeDef \hyperlink{group___h_a_l___time_base_g879cdb21ef051eb81ec51c18147397d5}{HAL\_\-InitTick} (uint32\_\-t TickPriority)
+\begin{CompactList}\small\item\em This function configures the TIM8 as a time base source. The time source is configured to have 1ms time base with a dedicated Tick interrupt priority. \item\end{CompactList}\item 
+void \hyperlink{group___h_a_l___time_base_gaf651af2afe688a991c657f64f8fa5f9}{HAL\_\-SuspendTick} (void)
+\begin{CompactList}\small\item\em Suspend Tick increment. \item\end{CompactList}\item 
+void \hyperlink{group___h_a_l___time_base_g24e0ee9dae1ec0f9d19200f5575ff790}{HAL\_\-ResumeTick} (void)
+\begin{CompactList}\small\item\em Resume Tick increment. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Переменные}
+\begin{CompactItemize}
+\item 
+\hypertarget{group___h_a_l___time_base_g5faa27108379f799afb6984010bf0384}{
+TIM\_\-HandleTypeDef \textbf{htim8}}
+\label{group___h_a_l___time_base_g5faa27108379f799afb6984010bf0384}
+
+\item 
+\hypertarget{group___h_a_l___time_base_gd252e5fa14fe03797c816cfb14962693}{
+uint32\_\-t \textbf{uwIncrementState} = 0}
+\label{group___h_a_l___time_base_gd252e5fa14fe03797c816cfb14962693}
+
+\end{CompactItemize}
+
+
+\subsection{Функции}
+\hypertarget{group___h_a_l___time_base_g879cdb21ef051eb81ec51c18147397d5}{
+\index{HAL\_\-TimeBase@{HAL\_\-TimeBase}!HAL\_\-InitTick@{HAL\_\-InitTick}}
+\index{HAL\_\-InitTick@{HAL\_\-InitTick}!HAL_TimeBase@{HAL\_\-TimeBase}}
+\subsubsection[{HAL\_\-InitTick}]{\setlength{\rightskip}{0pt plus 5cm}HAL\_\-StatusTypeDef HAL\_\-InitTick (uint32\_\-t {\em TickPriority})}}
+\label{group___h_a_l___time_base_g879cdb21ef051eb81ec51c18147397d5}
+
+
+This function configures the TIM8 as a time base source. The time source is configured to have 1ms time base with a dedicated Tick interrupt priority. 
+
+\begin{Desc}
+\item[Заметки:]This function is called automatically at the beginning of program after reset by HAL\_\-Init() or at any time when clock is configured, by HAL\_\-RCC\_\-ClockConfig(). \end{Desc}
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em TickPriority,:}]Tick interrupt priorty. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em HAL}]status \end{description}
+\end{Desc}
+\hypertarget{group___h_a_l___time_base_g24e0ee9dae1ec0f9d19200f5575ff790}{
+\index{HAL\_\-TimeBase@{HAL\_\-TimeBase}!HAL\_\-ResumeTick@{HAL\_\-ResumeTick}}
+\index{HAL\_\-ResumeTick@{HAL\_\-ResumeTick}!HAL_TimeBase@{HAL\_\-TimeBase}}
+\subsubsection[{HAL\_\-ResumeTick}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-ResumeTick (void)}}
+\label{group___h_a_l___time_base_g24e0ee9dae1ec0f9d19200f5575ff790}
+
+
+Resume Tick increment. 
+
+\begin{Desc}
+\item[Заметки:]Enable the tick increment by Enabling TIM8 update interrupt. \end{Desc}
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{group___h_a_l___time_base_gaf651af2afe688a991c657f64f8fa5f9}{
+\index{HAL\_\-TimeBase@{HAL\_\-TimeBase}!HAL\_\-SuspendTick@{HAL\_\-SuspendTick}}
+\index{HAL\_\-SuspendTick@{HAL\_\-SuspendTick}!HAL_TimeBase@{HAL\_\-TimeBase}}
+\subsubsection[{HAL\_\-SuspendTick}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-SuspendTick (void)}}
+\label{group___h_a_l___time_base_gaf651af2afe688a991c657f64f8fa5f9}
+
+
+Suspend Tick increment. 
+
+\begin{Desc}
+\item[Заметки:]Disable the tick increment by disabling TIM8 update interrupt. \end{Desc}
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}

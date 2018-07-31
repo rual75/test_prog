@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>test_prog: HAL_TimeBase</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Создано системой Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li><a href="modules.html"><span>Группы</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>HAL_TimeBase<br>
+<small>
+[<a class="el" href="group___s_t_m32_f7xx___h_a_l___examples.html">STM32F7xx_HAL_Examples</a>]</small>
+</h1><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Функции</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">HAL_StatusTypeDef&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___time_base.html#g879cdb21ef051eb81ec51c18147397d5">HAL_InitTick</a> (uint32_t TickPriority)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This function configures the TIM8 as a time base source. The time source is configured to have 1ms time base with a dedicated Tick interrupt priority.  <a href="#g879cdb21ef051eb81ec51c18147397d5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___time_base.html#gaf651af2afe688a991c657f64f8fa5f9">HAL_SuspendTick</a> (void)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Suspend Tick increment.  <a href="#gaf651af2afe688a991c657f64f8fa5f9"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___h_a_l___time_base.html#g24e0ee9dae1ec0f9d19200f5575ff790">HAL_ResumeTick</a> (void)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Resume Tick increment.  <a href="#g24e0ee9dae1ec0f9d19200f5575ff790"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Переменные</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="g5faa27108379f799afb6984010bf0384"></a><!-- doxytag: member="HAL_TimeBase::htim8" ref="g5faa27108379f799afb6984010bf0384" args="" -->
+TIM_HandleTypeDef&nbsp;</td><td class="memItemRight" valign="bottom"><b>htim8</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="gd252e5fa14fe03797c816cfb14962693"></a><!-- doxytag: member="HAL_TimeBase::uwIncrementState" ref="gd252e5fa14fe03797c816cfb14962693" args="" -->
+uint32_t&nbsp;</td><td class="memItemRight" valign="bottom"><b>uwIncrementState</b> = 0</td></tr>
+
+</table>
+<hr><h2>Функции</h2>
+<a class="anchor" name="g879cdb21ef051eb81ec51c18147397d5"></a><!-- doxytag: member="stm32f3xx_hal_timebase_TIM.c::HAL_InitTick" ref="g879cdb21ef051eb81ec51c18147397d5" args="(uint32_t TickPriority)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HAL_StatusTypeDef HAL_InitTick           </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&nbsp;</td>
+          <td class="paramname"> <em>TickPriority</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This function configures the TIM8 as a time base source. The time source is configured to have 1ms time base with a dedicated Tick interrupt priority. 
+<p>
+<dl class="note" compact><dt><b>Заметки:</b></dt><dd>This function is called automatically at the beginning of program after reset by HAL_Init() or at any time when clock is configured, by HAL_RCC_ClockConfig(). </dd></dl>
+<dl compact><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>TickPriority,:</em>&nbsp;</td><td>Tick interrupt priorty. </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Возвращаемые значения:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>HAL</em>&nbsp;</td><td>status </td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="g24e0ee9dae1ec0f9d19200f5575ff790"></a><!-- doxytag: member="stm32f3xx_hal_timebase_TIM.c::HAL_ResumeTick" ref="g24e0ee9dae1ec0f9d19200f5575ff790" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_ResumeTick           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Resume Tick increment. 
+<p>
+<dl class="note" compact><dt><b>Заметки:</b></dt><dd>Enable the tick increment by Enabling TIM8 update interrupt. </dd></dl>
+<dl compact><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>None</em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Возвращаемые значения:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>None</em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+<a class="anchor" name="gaf651af2afe688a991c657f64f8fa5f9"></a><!-- doxytag: member="stm32f3xx_hal_timebase_TIM.c::HAL_SuspendTick" ref="gaf651af2afe688a991c657f64f8fa5f9" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_SuspendTick           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Suspend Tick increment. 
+<p>
+<dl class="note" compact><dt><b>Заметки:</b></dt><dd>Disable the tick increment by disabling TIM8 update interrupt. </dd></dl>
+<dl compact><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>None</em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Возвращаемые значения:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>None</em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+
+</div>
+</div><p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Документация по test_prog. Последние изменения: Mon Jul 30 23:19:59 2018. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

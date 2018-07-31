@@ -1,0 +1,255 @@
+\hypertarget{main_8c}{
+\section{Файл D:/Project/Cortex/test\_\-prog/Src/main.c}
+\label{main_8c}\index{D:/Project/Cortex/test\_\-prog/Src/main.c@{D:/Project/Cortex/test\_\-prog/Src/main.c}}
+}
+: Main program body  
+
+
+{\tt \#include \char`\"{}main.h\char`\"{}}\par
+{\tt \#include \char`\"{}stm32f3xx\_\-hal.h\char`\"{}}\par
+{\tt \#include \char`\"{}cmsis\_\-os.h\char`\"{}}\par
+{\tt \#include \char`\"{}usb\_\-device.h\char`\"{}}\par
+\subsection*{Функции}
+\begin{CompactItemize}
+\item 
+void \hyperlink{main_8c_70af21c671abfcc773614a9a4f63d920}{SystemClock\_\-Config} (void)
+\begin{CompactList}\small\item\em System Clock Configuration. \item\end{CompactList}\item 
+\hypertarget{main_8c_016544463b4842ced7191baf8f449cea}{
+void \textbf{StartDefaultTask} (void const $\ast$argument)}
+\label{main_8c_016544463b4842ced7191baf8f449cea}
+
+\item 
+int \hyperlink{main_8c_840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\begin{CompactList}\small\item\em The application entry point. \item\end{CompactList}\item 
+void \hyperlink{main_8c_8a3b0ad512a6e6c6157440b68d395eac}{HAL\_\-TIM\_\-PeriodElapsedCallback} (TIM\_\-HandleTypeDef $\ast$htim)
+\begin{CompactList}\small\item\em Period elapsed callback in non blocking mode. \item\end{CompactList}\item 
+void \hyperlink{main_8c_829116a51f1db1a72ebd1120f60719d5}{\_\-Error\_\-Handler} (char $\ast$file, int line)
+\begin{CompactList}\small\item\em This function is executed in case of error occurrence. \item\end{CompactList}\end{CompactItemize}
+\begin{Indent}{\bf : Фунции запуска/остановки аналового потока}\par
+\begin{CompactItemize}
+\item 
+void \hyperlink{main_8c_cd9cf5714f6ed013ec979ea533d05fea}{StartAnalogLoop} (uint16\_\-t rate)
+\item 
+void \hyperlink{main_8c_8506365488842c498f03b0c6116486f0}{StopAnalogLoop} (void)
+\item 
+void \hyperlink{main_8c_d7e3dafc08886b97b9c9e23267645b9e}{HAL\_\-ADC\_\-ConvHalfCpltCallback} (ADC\_\-HandleTypeDef $\ast$hadc)
+\begin{CompactList}\small\item\em : вызывается обработчиком ПДП после заполнения половины буфера АЦП для запуска выборки в ЦАП \item\end{CompactList}\end{CompactItemize}
+\end{Indent}
+\subsection*{Переменные}
+\begin{CompactItemize}
+\item 
+\hypertarget{main_8c_22b804736f5648d52f639b2647d4ed13}{
+ADC\_\-HandleTypeDef \textbf{hadc1}}
+\label{main_8c_22b804736f5648d52f639b2647d4ed13}
+
+\item 
+DMA\_\-HandleTypeDef \hyperlink{main_8c_1c126854bb1813d31ab4776b21dcc51f}{hdma\_\-adc1}
+\item 
+\hypertarget{main_8c_40a0d1383beda58531dfda6218720e45}{
+DAC\_\-HandleTypeDef \textbf{hdac}}
+\label{main_8c_40a0d1383beda58531dfda6218720e45}
+
+\item 
+\hypertarget{main_8c_ddc9a39d35106f6abd01d8482713ca72}{
+DMA\_\-HandleTypeDef \textbf{hdma\_\-dac\_\-ch1}}
+\label{main_8c_ddc9a39d35106f6abd01d8482713ca72}
+
+\item 
+\hypertarget{main_8c_2c80fd5510e2990a59a5c90d745c716c}{
+TIM\_\-HandleTypeDef \textbf{htim2}}
+\label{main_8c_2c80fd5510e2990a59a5c90d745c716c}
+
+\item 
+UART\_\-HandleTypeDef \hyperlink{main_8c_2cf715bef37f7e8ef385a30974a5f0d5}{huart1}
+\begin{CompactList}\small\item\em прототип глобальной струтуры USART1. \item\end{CompactList}\item 
+\hypertarget{main_8c_5af94ab36bfe698db3e6beea96d10a90}{
+DMA\_\-HandleTypeDef \textbf{hdma\_\-usart1\_\-tx}}
+\label{main_8c_5af94ab36bfe698db3e6beea96d10a90}
+
+\item 
+\hypertarget{main_8c_34251392f0d5e2461e3aef615918c235}{
+DMA\_\-HandleTypeDef \textbf{hdma\_\-usart1\_\-rx}}
+\label{main_8c_34251392f0d5e2461e3aef615918c235}
+
+\item 
+\hypertarget{main_8c_a658fe134a5d1309d7a15c8116fa142c}{
+osThreadId \textbf{defaultTaskHandle}}
+\label{main_8c_a658fe134a5d1309d7a15c8116fa142c}
+
+\item 
+\hypertarget{main_8c_571522b4da7f208084e7bdac703d4a31}{
+uint16\_\-t \textbf{analog\_\-flow\_\-buf} \mbox{[}ANALOG\_\-BUFF\_\-SIZE\mbox{]}}
+\label{main_8c_571522b4da7f208084e7bdac703d4a31}
+
+\item 
+\hypertarget{main_8c_679068a0d722fce7fe3e053cc03922d9}{
+uint8\_\-t \textbf{usart\_\-rx\_\-buff} \mbox{[}1\mbox{]}}
+\label{main_8c_679068a0d722fce7fe3e053cc03922d9}
+
+\end{CompactItemize}
+
+
+\subsection{Подробное описание}
+: Main program body 
+
+This notice applies to any and all portions of this file that are not between comment pairs USER CODE BEGIN and USER CODE END. Other portions of this file, whether inserted by the user or by software development tools are owned by their respective copyright owners.
+
+Copyright (c) 2018 STMicroelectronics International N.V. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted, provided that the following conditions are met:
+
+1. Redistribution of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. 3. Neither the name of STMicroelectronics nor the names of other contributors to this software may be used to endorse or promote products derived from this software without specific written permission. 4. This software, including modifications and/or derivative works of this software, must execute solely and exclusively on microcontroller or microprocessor devices manufactured by or for STMicroelectronics. 5. Redistribution and use of this software other than as permitted under this license is void and will automatically terminate your rights under this license.
+
+THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS \char`\"{}AS IS\char`\"{} AND ANY EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY RIGHTS ARE DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. IN NO EVENT SHALL STMICROELECTRONICS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+
+\subsection{Функции}
+\hypertarget{main_8c_829116a51f1db1a72ebd1120f60719d5}{
+\index{main.c@{main.c}!\_\-Error\_\-Handler@{\_\-Error\_\-Handler}}
+\index{\_\-Error\_\-Handler@{\_\-Error\_\-Handler}!main.c@{main.c}}
+\subsubsection[{\_\-Error\_\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void \_\-Error\_\-Handler (char $\ast$ {\em file}, \/  int {\em line})}}
+\label{main_8c_829116a51f1db1a72ebd1120f60719d5}
+
+
+This function is executed in case of error occurrence. 
+
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em file,:}]The file name as string. \item[{\em line,:}]The line in file as a number. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{main_8c_d7e3dafc08886b97b9c9e23267645b9e}{
+\index{main.c@{main.c}!HAL\_\-ADC\_\-ConvHalfCpltCallback@{HAL\_\-ADC\_\-ConvHalfCpltCallback}}
+\index{HAL\_\-ADC\_\-ConvHalfCpltCallback@{HAL\_\-ADC\_\-ConvHalfCpltCallback}!main.c@{main.c}}
+\subsubsection[{HAL\_\-ADC\_\-ConvHalfCpltCallback}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-ADC\_\-ConvHalfCpltCallback (ADC\_\-HandleTypeDef $\ast$ {\em hadc})}}
+\label{main_8c_d7e3dafc08886b97b9c9e23267645b9e}
+
+
+: вызывается обработчиком ПДП после заполнения половины буфера АЦП для запуска выборки в ЦАП 
+
+HAL\_\-ADC\_\-ConvHalfCpltCallback \begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em :}]ADC\_\-HandleTypeDef$\ast$ hadc - - указатель на структуру АЦП \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращает:]: Нет \end{Desc}
+\hypertarget{main_8c_8a3b0ad512a6e6c6157440b68d395eac}{
+\index{main.c@{main.c}!HAL\_\-TIM\_\-PeriodElapsedCallback@{HAL\_\-TIM\_\-PeriodElapsedCallback}}
+\index{HAL\_\-TIM\_\-PeriodElapsedCallback@{HAL\_\-TIM\_\-PeriodElapsedCallback}!main.c@{main.c}}
+\subsubsection[{HAL\_\-TIM\_\-PeriodElapsedCallback}]{\setlength{\rightskip}{0pt plus 5cm}void HAL\_\-TIM\_\-PeriodElapsedCallback (TIM\_\-HandleTypeDef $\ast$ {\em htim})}}
+\label{main_8c_8a3b0ad512a6e6c6157440b68d395eac}
+
+
+Period elapsed callback in non blocking mode. 
+
+\begin{Desc}
+\item[Заметки:]This function is called when TIM8 interrupt took place, inside HAL\_\-TIM\_\-IRQHandler(). It makes a direct call to HAL\_\-IncTick() to increment a global variable \char`\"{}uwTick\char`\"{} used as application time base. \end{Desc}
+\begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em htim}]: TIM handle \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{main_8c_840291bc02cba5474a4cb46a9b9566fe}{
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (void)}}
+\label{main_8c_840291bc02cba5474a4cb46a9b9566fe}
+
+
+The application entry point. 
+
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+\hypertarget{main_8c_cd9cf5714f6ed013ec979ea533d05fea}{
+\index{main.c@{main.c}!StartAnalogLoop@{StartAnalogLoop}}
+\index{StartAnalogLoop@{StartAnalogLoop}!main.c@{main.c}}
+\subsubsection[{StartAnalogLoop}]{\setlength{\rightskip}{0pt plus 5cm}void StartAnalogLoop (uint16\_\-t {\em rate})}}
+\label{main_8c_cd9cf5714f6ed013ec979ea533d05fea}
+
+
+StartAnalogLoop запуск выгрузки значений АЦП в буфер \begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em :}]rate - значение от 10 до 10 000 отсчетов в секунду \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращает:]: Нет \end{Desc}
+\hypertarget{main_8c_8506365488842c498f03b0c6116486f0}{
+\index{main.c@{main.c}!StopAnalogLoop@{StopAnalogLoop}}
+\index{StopAnalogLoop@{StopAnalogLoop}!main.c@{main.c}}
+\subsubsection[{StopAnalogLoop}]{\setlength{\rightskip}{0pt plus 5cm}void StopAnalogLoop (void)}}
+\label{main_8c_8506365488842c498f03b0c6116486f0}
+
+
+StopAnalogLoop остановка выгрузки значений АЦП в буфер и выборки в ЦАП \begin{Desc}
+\item[Аргументы:]
+\begin{description}
+\item[{\em :}]нет \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Возвращает:]: нет \end{Desc}
+\hypertarget{main_8c_70af21c671abfcc773614a9a4f63d920}{
+\index{main.c@{main.c}!SystemClock\_\-Config@{SystemClock\_\-Config}}
+\index{SystemClock\_\-Config@{SystemClock\_\-Config}!main.c@{main.c}}
+\subsubsection[{SystemClock\_\-Config}]{\setlength{\rightskip}{0pt plus 5cm}void SystemClock\_\-Config (void)}}
+\label{main_8c_70af21c671abfcc773614a9a4f63d920}
+
+
+System Clock Configuration. 
+
+\begin{Desc}
+\item[Возвращаемые значения:]
+\begin{description}
+\item[{\em None}]\end{description}
+\end{Desc}
+
+
+Initializes the CPU, AHB and APB busses clocks
+
+Initializes the CPU, AHB and APB busses clocks
+
+Configure the Systick interrupt time
+
+Configure the Systick
+
+\subsection{Переменные}
+\hypertarget{main_8c_1c126854bb1813d31ab4776b21dcc51f}{
+\index{main.c@{main.c}!hdma\_\-adc1@{hdma\_\-adc1}}
+\index{hdma\_\-adc1@{hdma\_\-adc1}!main.c@{main.c}}
+\subsubsection[{hdma\_\-adc1}]{\setlength{\rightskip}{0pt plus 5cm}DMA\_\-HandleTypeDef {\bf hdma\_\-adc1}}}
+\label{main_8c_1c126854bb1813d31ab4776b21dcc51f}
+
+
+File Name : stm32f3xx\_\-hal\_\-msp.c Description : This file provides code for the MSP Initialization and de-Initialization codes.
+
+This notice applies to any and all portions of this file that are not between comment pairs USER CODE BEGIN and USER CODE END. Other portions of this file, whether inserted by the user or by software development tools are owned by their respective copyright owners.
+
+Copyright (c) 2018 STMicroelectronics International N.V. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted, provided that the following conditions are met:
+
+1. Redistribution of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. 3. Neither the name of STMicroelectronics nor the names of other contributors to this software may be used to endorse or promote products derived from this software without specific written permission. 4. This software, including modifications and/or derivative works of this software, must execute solely and exclusively on microcontroller or microprocessor devices manufactured by or for STMicroelectronics. 5. Redistribution and use of this software other than as permitted under this license is void and will automatically terminate your rights under this license.
+
+THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS \char`\"{}AS IS\char`\"{} AND ANY EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY RIGHTS ARE DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. IN NO EVENT SHALL STMICROELECTRONICS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. \hypertarget{main_8c_2cf715bef37f7e8ef385a30974a5f0d5}{
+\index{main.c@{main.c}!huart1@{huart1}}
+\index{huart1@{huart1}!main.c@{main.c}}
+\subsubsection[{huart1}]{\setlength{\rightskip}{0pt plus 5cm}UART\_\-HandleTypeDef {\bf huart1}}}
+\label{main_8c_2cf715bef37f7e8ef385a30974a5f0d5}
+
+
+прототип глобальной струтуры USART1. 
+
+для использоваания класса map библиотеки STL для дешифровки команды $\ast$ раскоментируйте define USE\_\-STL, код рабочий и компилируется корректно, $\ast$ но на платформе STM32F3Discovery не запускается из-за недостатка RAM $\ast$ В рабочей версии программы применена стандартная библиотека string.h $\ast$ и более легкая функция strcmp() 

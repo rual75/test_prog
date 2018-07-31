@@ -1,0 +1,125 @@
+\hypertarget{stm32f3xx__it_8c}{
+\section{Файл D:/Project/Cortex/test\_\-prog/Src/stm32f3xx\_\-it.c}
+\label{stm32f3xx__it_8c}\index{D:/Project/Cortex/test\_\-prog/Src/stm32f3xx\_\-it.c@{D:/Project/Cortex/test\_\-prog/Src/stm32f3xx\_\-it.c}}
+}
+Interrupt Service Routines.  
+
+
+{\tt \#include \char`\"{}stm32f3xx\_\-hal.h\char`\"{}}\par
+{\tt \#include \char`\"{}stm32f3xx.h\char`\"{}}\par
+{\tt \#include \char`\"{}stm32f3xx\_\-it.h\char`\"{}}\par
+{\tt \#include \char`\"{}cmsis\_\-os.h\char`\"{}}\par
+\subsection*{Функции}
+\begin{CompactItemize}
+\item 
+\hypertarget{stm32f3xx__it_8c_b5e09814056d617c521549e542639b7e}{
+void \hyperlink{stm32f3xx__it_8c_b5e09814056d617c521549e542639b7e}{SysTick\_\-Handler} (void)}
+\label{stm32f3xx__it_8c_b5e09814056d617c521549e542639b7e}
+
+\begin{CompactList}\small\item\em This function handles System tick timer. \item\end{CompactList}\item 
+\hypertarget{stm32f3xx__it_8c_7b6fac3d670a4860ebec8a961d5c4a73}{
+void \hyperlink{stm32f3xx__it_8c_7b6fac3d670a4860ebec8a961d5c4a73}{DMA1\_\-Channel1\_\-IRQHandler} (void)}
+\label{stm32f3xx__it_8c_7b6fac3d670a4860ebec8a961d5c4a73}
+
+\begin{CompactList}\small\item\em This function handles DMA1 channel1 global interrupt. \item\end{CompactList}\item 
+\hypertarget{stm32f3xx__it_8c_adb8937353693c94b0d8e32fc6f18fc2}{
+void \hyperlink{stm32f3xx__it_8c_adb8937353693c94b0d8e32fc6f18fc2}{DMA1\_\-Channel3\_\-IRQHandler} (void)}
+\label{stm32f3xx__it_8c_adb8937353693c94b0d8e32fc6f18fc2}
+
+\begin{CompactList}\small\item\em This function handles DMA1 channel3 global interrupt. \item\end{CompactList}\item 
+\hypertarget{stm32f3xx__it_8c_9b75ef44037d7ed50a1078c024ae853a}{
+void \hyperlink{stm32f3xx__it_8c_9b75ef44037d7ed50a1078c024ae853a}{DMA1\_\-Channel4\_\-IRQHandler} (void)}
+\label{stm32f3xx__it_8c_9b75ef44037d7ed50a1078c024ae853a}
+
+\begin{CompactList}\small\item\em This function handles DMA1 channel4 global interrupt. \item\end{CompactList}\item 
+\hypertarget{stm32f3xx__it_8c_bd16b3391557c4a3a8020d675e2c452f}{
+void \hyperlink{stm32f3xx__it_8c_bd16b3391557c4a3a8020d675e2c452f}{DMA1\_\-Channel5\_\-IRQHandler} (void)}
+\label{stm32f3xx__it_8c_bd16b3391557c4a3a8020d675e2c452f}
+
+\begin{CompactList}\small\item\em This function handles DMA1 channel5 global interrupt. \item\end{CompactList}\item 
+\hypertarget{stm32f3xx__it_8c_6543c7b9f9bdb00685db956a0e7c560b}{
+void \hyperlink{stm32f3xx__it_8c_6543c7b9f9bdb00685db956a0e7c560b}{USB\_\-LP\_\-CAN\_\-RX0\_\-IRQHandler} (void)}
+\label{stm32f3xx__it_8c_6543c7b9f9bdb00685db956a0e7c560b}
+
+\begin{CompactList}\small\item\em This function handles USB low priority or CAN\_\-RX0 interrupts. \item\end{CompactList}\item 
+\hypertarget{stm32f3xx__it_8c_7139cd4baabbbcbab0c1fe6d7d4ae1cc}{
+void \hyperlink{stm32f3xx__it_8c_7139cd4baabbbcbab0c1fe6d7d4ae1cc}{USART1\_\-IRQHandler} (void)}
+\label{stm32f3xx__it_8c_7139cd4baabbbcbab0c1fe6d7d4ae1cc}
+
+\begin{CompactList}\small\item\em This function handles USART1 global interrupt / USART1 wake-up interrupt through EXTI line 25. \item\end{CompactList}\item 
+\hypertarget{stm32f3xx__it_8c_255e5267ee3275b665940ed1a61ae3ce}{
+void \hyperlink{stm32f3xx__it_8c_255e5267ee3275b665940ed1a61ae3ce}{TIM8\_\-UP\_\-IRQHandler} (void)}
+\label{stm32f3xx__it_8c_255e5267ee3275b665940ed1a61ae3ce}
+
+\begin{CompactList}\small\item\em This function handles TIM8 update interrupt. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Переменные}
+\begin{CompactItemize}
+\item 
+\hypertarget{stm32f3xx__it_8c_fabb8e1d05154a3b694f4f4d150b194f}{
+PCD\_\-HandleTypeDef \textbf{hpcd\_\-USB\_\-FS}}
+\label{stm32f3xx__it_8c_fabb8e1d05154a3b694f4f4d150b194f}
+
+\item 
+DMA\_\-HandleTypeDef \hyperlink{stm32f3xx__it_8c_1c126854bb1813d31ab4776b21dcc51f}{hdma\_\-adc1}
+\item 
+\hypertarget{stm32f3xx__it_8c_ddc9a39d35106f6abd01d8482713ca72}{
+DMA\_\-HandleTypeDef \textbf{hdma\_\-dac\_\-ch1}}
+\label{stm32f3xx__it_8c_ddc9a39d35106f6abd01d8482713ca72}
+
+\item 
+\hypertarget{stm32f3xx__it_8c_5af94ab36bfe698db3e6beea96d10a90}{
+DMA\_\-HandleTypeDef \textbf{hdma\_\-usart1\_\-tx}}
+\label{stm32f3xx__it_8c_5af94ab36bfe698db3e6beea96d10a90}
+
+\item 
+\hypertarget{stm32f3xx__it_8c_34251392f0d5e2461e3aef615918c235}{
+DMA\_\-HandleTypeDef \textbf{hdma\_\-usart1\_\-rx}}
+\label{stm32f3xx__it_8c_34251392f0d5e2461e3aef615918c235}
+
+\item 
+UART\_\-HandleTypeDef \hyperlink{stm32f3xx__it_8c_2cf715bef37f7e8ef385a30974a5f0d5}{huart1}
+\begin{CompactList}\small\item\em прототип глобальной струтуры USART1. \item\end{CompactList}\item 
+\hypertarget{group___h_a_l___time_base_g5faa27108379f799afb6984010bf0384}{
+TIM\_\-HandleTypeDef \textbf{htim8}}
+\label{group___h_a_l___time_base_g5faa27108379f799afb6984010bf0384}
+
+\end{CompactItemize}
+
+
+\subsection{Подробное описание}
+Interrupt Service Routines. 
+
+COPYRIGHT(c) 2018 STMicroelectronics
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. 3. Neither the name of STMicroelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \char`\"{}AS IS\char`\"{} AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+
+\subsection{Переменные}
+\hypertarget{stm32f3xx__it_8c_1c126854bb1813d31ab4776b21dcc51f}{
+\index{stm32f3xx\_\-it.c@{stm32f3xx\_\-it.c}!hdma\_\-adc1@{hdma\_\-adc1}}
+\index{hdma\_\-adc1@{hdma\_\-adc1}!stm32f3xx_it.c@{stm32f3xx\_\-it.c}}
+\subsubsection[{hdma\_\-adc1}]{\setlength{\rightskip}{0pt plus 5cm}DMA\_\-HandleTypeDef {\bf hdma\_\-adc1}}}
+\label{stm32f3xx__it_8c_1c126854bb1813d31ab4776b21dcc51f}
+
+
+File Name : stm32f3xx\_\-hal\_\-msp.c Description : This file provides code for the MSP Initialization and de-Initialization codes.
+
+This notice applies to any and all portions of this file that are not between comment pairs USER CODE BEGIN and USER CODE END. Other portions of this file, whether inserted by the user or by software development tools are owned by their respective copyright owners.
+
+Copyright (c) 2018 STMicroelectronics International N.V. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted, provided that the following conditions are met:
+
+1. Redistribution of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. 3. Neither the name of STMicroelectronics nor the names of other contributors to this software may be used to endorse or promote products derived from this software without specific written permission. 4. This software, including modifications and/or derivative works of this software, must execute solely and exclusively on microcontroller or microprocessor devices manufactured by or for STMicroelectronics. 5. Redistribution and use of this software other than as permitted under this license is void and will automatically terminate your rights under this license.
+
+THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS \char`\"{}AS IS\char`\"{} AND ANY EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY RIGHTS ARE DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. IN NO EVENT SHALL STMICROELECTRONICS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. \hypertarget{stm32f3xx__it_8c_2cf715bef37f7e8ef385a30974a5f0d5}{
+\index{stm32f3xx\_\-it.c@{stm32f3xx\_\-it.c}!huart1@{huart1}}
+\index{huart1@{huart1}!stm32f3xx_it.c@{stm32f3xx\_\-it.c}}
+\subsubsection[{huart1}]{\setlength{\rightskip}{0pt plus 5cm}UART\_\-HandleTypeDef {\bf huart1}}}
+\label{stm32f3xx__it_8c_2cf715bef37f7e8ef385a30974a5f0d5}
+
+
+прототип глобальной струтуры USART1. 
+
+для использоваания класса map библиотеки STL для дешифровки команды $\ast$ раскоментируйте define USE\_\-STL, код рабочий и компилируется корректно, $\ast$ но на платформе STM32F3Discovery не запускается из-за недостатка RAM $\ast$ В рабочей версии программы применена стандартная библиотека string.h $\ast$ и более легкая функция strcmp() 
